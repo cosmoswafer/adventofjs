@@ -1,4 +1,7 @@
-# adventofjs
-Advent of JavaScript challenge solutions
+# Advent of JavaScript and CSS
 
-Their home page: https://www.adventofjs.com/
+The solutions of:
+
+* [Advent of JavaScript](https://www.adventofjs.com/)
+* [Advent of CSS](https://www.adventofcss.com/)
+
