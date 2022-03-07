@@ -16,3 +16,27 @@ Users should be able to:
 - Start and Stop the Timer
 - Click on the gear icon to change the length (minutes and seconds) for the timer.
 
+
+## Write-up
+
+The timer logic was written by vanilla JavaScript API.
+Only use Vite as development tool.
+
+Used concepts:
+
+* Classes
+* Enclosure
+
+Used API:
+
+* querySelector
+* addEventListener
+* classList.toggle
+* toggleAttribute
+
+Used syntax sugar:
+
+* Optional chaining
+* Nullish coalescing
+
+The implementation could be further improves such as write a stand alone *raf* utility class.
