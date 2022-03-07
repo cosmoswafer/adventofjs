@@ -18,6 +18,8 @@ export class Timer {
 
         this.minutes_inp = document.querySelector('.timer .time .minutes input');
         this.seconds_inp = document.querySelector('.timer .time .seconds input');
+
+        this.ring_circle = document.querySelector('.ring');
     }
 
     _configVariables() {
@@ -47,13 +49,15 @@ export class Timer {
     }
 
     _toggleButtons() {
-        this.start_btn.classList.toggle("hide");
-        this.pause_btn.classList.toggle("hide");
+        this.start_btn.classList.toggle('hide');
+        this.pause_btn.classList.toggle('hide');
+        this.settings_btn.toggleAttribute('disabled');
     }
 
     clickStart = e => {
         this._startTimer();
         this._toggleButtons();
+        this._endRing(false);
     }
 
     clickPause = e => {
@@ -75,7 +79,8 @@ export class Timer {
 
         if (! this.caf_stop && elapsed < this.o_timer_sec) {
             requestAnimationFrame(this._cafTimer);
-        } else {
+        } else if (! this.caf_stop) {
+            this._endTimer();
         }
     }
     
@@ -83,9 +88,23 @@ export class Timer {
         this.caf_stop = true;
     }
 
+    _endTimer() {
+        this._endRing(true);
+        this._toggleButtons();
+    }
+
+    _endRing(end) {
+        if (end) {
+            this.ring_circle.classList.add('ending');
+        } else {
+            this.ring_circle.classList.remove('ending');
+        }
+    }
+
     editTimer = e => {
         this._configVariables();
-        this.minutes_inp.toggleAttribute("disabled");
-        this.seconds_inp.toggleAttribute("disabled");
+        this.minutes_inp.toggleAttribute('disabled');
+        this.seconds_inp.toggleAttribute('disabled');
+        this.start_btn.toggleAttribute('disabled');
     }
 }
