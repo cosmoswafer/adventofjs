@@ -16,18 +16,19 @@ export class Timer {
         this.pause_btn = document.querySelector('.timer button.start.pause');
         this.settings_btn = document.querySelector('.timer button.settings');
 
-        this.minutes_elm = document.querySelector('.timer .time .minutes input');
-        this.seconds_elm = document.querySelector('.timer .time .seconds input');
+        this.minutes_inp = document.querySelector('.timer .time .minutes input');
+        this.seconds_inp = document.querySelector('.timer .time .seconds input');
     }
 
     _configVariables() {
-        this.minutes = Number(this.minutes_elm?.value ?? 0);
-        this.seconds = Number(this.seconds_elm?.value ?? 0);
+        this.minutes = Number(this.minutes_inp?.value ?? 0);
+        this.seconds = Number(this.seconds_inp?.value ?? 0);
     }
 
     _bindEvents() {
         this.start_btn.addEventListener('click', this.clickStart);
         this.pause_btn.addEventListener('click', this.clickPause);
+        this.settings_btn.addEventListener('click', this.editTimer);
     }
 
     _setTimer(seconds) {
@@ -36,18 +37,13 @@ export class Timer {
     }
 
     _updateTimer() {
-        this.minutes_elm.value = this.minutes;
-        this.seconds_elm.value = this.seconds;
+        this.minutes_inp.value = this.minutes;
+        this.seconds_inp.value = this.seconds;
     }
 
     setTimer(seconds) {
         this._setTimer(seconds);
         this._updateTimer();
-    }
-
-    hi() {
-        console.log(`Hi there, ${this.name}!`);
-        console.log(`Timer value is ${this.minutes}:${this.seconds}.`);
     }
 
     _toggleButtons() {
@@ -85,5 +81,10 @@ export class Timer {
     
     _stopTimer() {
         this.caf_stop = true;
+    }
+
+    editTimer = e => {
+        this.minutes_inp.toggleAttribute("disabled");
+        this.seconds_inp.toggleAttribute("disabled");
     }
 }
