@@ -73,7 +73,7 @@ export class Timer {
 
         this.setTimer(this.o_timer_sec - elapsed);
 
-        if (! this.caf_stop && elapsed <= this.o_timer_sec) {
+        if (! this.caf_stop && elapsed < this.o_timer_sec) {
             requestAnimationFrame(this._cafTimer);
         } else {
         }
@@ -84,6 +84,7 @@ export class Timer {
     }
 
     editTimer = e => {
+        this._configVariables();
         this.minutes_inp.toggleAttribute("disabled");
         this.seconds_inp.toggleAttribute("disabled");
     }
