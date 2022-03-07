@@ -3,6 +3,7 @@ export class Timer {
     o_timer_sec = 0;
     minutes = 0;
     seconds = 0;
+    caf_stop = false;
 
     constructor() {
         this._findElements();
@@ -11,7 +12,8 @@ export class Timer {
     }
 
     _findElements() {
-        this.start_btn = document.querySelector('.timer button.start');
+        this.start_btn = document.querySelector('.timer button.start.start');
+        this.pause_btn = document.querySelector('.timer button.start.pause');
         this.settings_btn = document.querySelector('.timer button.settings');
 
         this.minutes_elm = document.querySelector('.timer .time .minutes input');
@@ -25,6 +27,7 @@ export class Timer {
 
     _bindEvents() {
         this.start_btn.addEventListener('click', this.clickStart);
+        this.pause_btn.addEventListener('click', this.clickPause);
     }
 
     _setTimer(seconds) {
@@ -47,31 +50,40 @@ export class Timer {
         console.log(`Timer value is ${this.minutes}:${this.seconds}.`);
     }
 
-    clickStart = e => {
-        console.log("Clicked start button.");
-        console.log(`Timer value is ${this.minutes}:${this.seconds}.`);
+    _toggleButtons() {
+        this.start_btn.classList.toggle("hide");
+        this.pause_btn.classList.toggle("hide");
+    }
 
+    clickStart = e => {
         this._startTimer();
+        this._toggleButtons();
+    }
+
+    clickPause = e => {
+        this._stopTimer();
+        this._toggleButtons();
     }
 
     _startTimer() {
         this.o_timer_sec = this.minutes * 60 + this.seconds;
         this._start_time = performance.now();
-        this.caf_id = requestAnimationFrame(this._cafTimer);
-        console.log(`Started timer: ${this.o_timer_sec}`);
+        this.caf_stop = false;
+        requestAnimationFrame(this._cafTimer);
     }
 
     _cafTimer = t => {
-        let elapsed = Math.floor((t - this._start_time) / 1000);
-        console.log(`DEBUG: elapsed time: ${elapsed}`);
+        let elapsed = Math.floor(Math.abs(t - this._start_time) / 1000);
 
         this.setTimer(this.o_timer_sec - elapsed);
 
-        if (elapsed <= this.o_timer_sec) {
+        if (! this.caf_stop && elapsed <= this.o_timer_sec) {
             requestAnimationFrame(this._cafTimer);
         } else {
-            console.log("CAF stopped!");
         }
     }
     
+    _stopTimer() {
+        this.caf_stop = true;
+    }
 }
