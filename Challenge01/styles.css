@@ -14,6 +14,7 @@
     /*Timer dimension*/
     --ring-size: 518px;
     --timer-size: 500px;
+    --timer-margin: 9px;
     --timer-fsize: 196px;
     --timer-width: 150px;
     --timer-fcolour: white;
@@ -66,7 +67,8 @@ body {
     position: relative;
     z-index: 2;
 
-    display: inline-block;
+    left: var(--timer-margin);
+    top: var(--timer-margin);
 
     width: var(--timer-size);
     height: var(--timer-size);
