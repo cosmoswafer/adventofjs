@@ -32,10 +32,6 @@ body {
     display: grid;
     grid-template-columns: auto var(--ring-size) auto;
     grid-template-rows: auto var(--ring-size) auto;
-    /*
-    grid-template-columns: auto [left] var(--ring-size) [right] auto;
-    grid-template-rows: auto [top] var(--ring-size) [bottom] auto;
-    */
 }
 
 #app {
@@ -43,14 +39,6 @@ body {
     grid-row: 2;
 
     position: relative;
-    /*
-    grid-column-start: left;
-    grid-column-end: right;
-    grid-row-start: top;
-    grid-row-end: bottom;
-    */
-    /*DEBUG*/
-    /*background: lightblue;*/
 
     /*Values picks up from figma*/
     box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);

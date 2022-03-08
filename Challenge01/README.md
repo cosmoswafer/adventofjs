@@ -19,6 +19,8 @@ Users should be able to:
 
 ## Write-up
 
+### JavaScript Challenges
+
 The timer logic was written by vanilla JavaScript API.
 Only use Vite as development tool.
 
@@ -40,3 +42,14 @@ Used syntax sugar:
 * Nullish coalescing
 
 The implementation could be further improves such as write a stand alone *raf* utility class.
+
+### CSS Challenges 
+
+Used CSS skills:
+
+* Variables and Calculation
+* Grid layout
+* Circle border and shadow
+* Using SVG to draw a circle
+
+It's not easy for me, I have to follow the solution to create the CSS.
