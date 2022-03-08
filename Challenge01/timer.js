@@ -15,6 +15,8 @@ export class Timer {
         this.start_btn = document.querySelector('.timer button.start');
         this.pause_btn = document.querySelector('.timer button.pause');
         this.settings_btn = document.querySelector('.timer button.settings');
+        this.settings_gear = document.querySelector('.timer button.settings .gear');
+        this.settings_check = document.querySelector('.timer button.settings .check');
 
         this.minutes_inp = document.querySelector('.timer .time .minutes input');
         this.seconds_inp = document.querySelector('.timer .time .seconds input');
@@ -113,5 +115,8 @@ export class Timer {
         this.seconds_inp.toggleAttribute('disabled');
         //While editing the timer, to avoid the count down changing the timer numbers.
         this.start_btn.toggleAttribute('disabled');
+        //Switching the icons
+        this.settings_gear.classList.toggle('hide');
+        this.settings_check.classList.toggle('hide');
     }
 }
