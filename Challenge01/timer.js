@@ -12,8 +12,8 @@ export class Timer {
     }
 
     _findElements() {
-        this.start_btn = document.querySelector('.timer button.start.start');
-        this.pause_btn = document.querySelector('.timer button.start.pause');
+        this.start_btn = document.querySelector('.timer button.start');
+        this.pause_btn = document.querySelector('.timer button.pause');
         this.settings_btn = document.querySelector('.timer button.settings');
 
         this.minutes_inp = document.querySelector('.timer .time .minutes input');

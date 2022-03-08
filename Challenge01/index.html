@@ -9,18 +9,23 @@
   </head>
   <body>
     <div id="app">
+<div class="ring">
+    <svg height="500" width="500">
+        <circle cx="250" cy="250" r="245" stroke-width="10" fill="none" />
+    </svg>
+</div>
 <div class="timer">
-    <div class="ring">O</div>
     <div class="time">
         <div class="minutes">
-            <input type="text" value="45" disabled >
+            <input type="text" name="minutes" value="45" disabled >
         </div>
+        <div class="colon">:</div>
         <div class="seconds">
-            <input type="text" value="00" disabled >
+            <input type="text" name="seconds" value="00" disabled >
         </div>
     </div>
     <button class="start">START</button>
-    <button class="pause">PAUSE</button>
+    <button class="pause hide">PAUSE</button>
     <button class="settings">⚙️ </button>
 </div>
     </div>
