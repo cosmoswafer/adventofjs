@@ -34,13 +34,16 @@ export class Timer {
     }
 
     _setTimer(seconds) {
-        this.minutes = Math.floor(seconds / 60);
-        this.seconds = seconds % 60;
+        this.minutes = Math.floor(Number(seconds) / 60);
+        this.seconds = Number(seconds) % 60;
     }
 
     _updateTimer() {
         this.minutes_inp.value = this.minutes;
         this.seconds_inp.value = this.seconds;
+        //Patch heading zero for minutes and seconds, e.g. '1' => '01'.
+        if (this.minutes < 10) this.minutes_inp.value = '0' + this.minutes;
+        if (this.seconds < 10) this.seconds_inp.value = '0' + this.seconds;
     }
 
     setTimer(seconds) {
@@ -49,8 +52,10 @@ export class Timer {
     }
 
     _toggleButtons() {
+        //Flip start and pause button.
         this.start_btn.classList.toggle('hide');
         this.pause_btn.classList.toggle('hide');
+        //When timer started or pause button shown, disable the setting button as well.
         this.settings_btn.toggleAttribute('disabled');
     }
 
@@ -103,8 +108,10 @@ export class Timer {
 
     editTimer = e => {
         this._configVariables();
+        //Enable editing the input fields of minutes and seconds.
         this.minutes_inp.toggleAttribute('disabled');
         this.seconds_inp.toggleAttribute('disabled');
+        //While editing the timer, to avoid the count down changing the timer numbers.
         this.start_btn.toggleAttribute('disabled');
     }
 }
