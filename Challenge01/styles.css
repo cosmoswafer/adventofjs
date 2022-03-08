@@ -78,6 +78,7 @@ body {
     color: var(--timer-fcolour);
 
     display: grid;
+    /*30px is the gap between the time numbers and start button.*/
     grid-template-rows: 25% var(--timer-fsize) 30px var(--btn-fsize) auto var(--btn-fsize) auto;
     justify-items: center;
     align-items: center;
@@ -89,6 +90,7 @@ body {
     font-family: "bebas";
     font-size: var(--timer-fsize);
     display: grid;
+    /*Sizes refer to the width of time numbers.*/
     grid-template-columns: auto 1em 0.2em 1em auto;
 }
 
