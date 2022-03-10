@@ -18,10 +18,14 @@ class MenuItem {
     subtotal_div;
     decrease_btn;
     increase_btn;
+
+    notifyCart;
     
 
-    constructor(dom_item, order, name, price, image) {
+    constructor(dom_item, order, name, price, image, notify_func) {
         //dom_item should be a complete item cloned from template.
+        this.notifyCart = notify_func;
+
         this.menu_item_li = dom_item;
 
         this._findElements(this.menu_item_li);
@@ -90,10 +94,51 @@ class MenuItem {
 
     addQuantity = e => {
         this._adjustQuantity(1);
+        this.notifyCart();
     }
 
     deductQuantity = e => {
         this._adjustQuantity(-1);
+        this.notifyCart();
+    }
+}
+
+class Totals {
+    tax_rate = 0.0975;
+
+    subtotal = 0.0;
+    tax = 0.0;
+    total = 0.0;
+
+    subtotal_div;
+    tax_div;
+    total_div;
+
+    notifyCart;
+
+    constructor(notify_func) {
+        this.notifyCart = notify_func;
+        this._findElements();
+        this.updateTotal(0);
+    }
+
+    _findElements() {
+        this.subtotal_div = document.querySelector('div.totals div.amount.price.subtotal');
+        this.tax_div = document.querySelector('div.totals div.amount.price.tax');
+        this.total_div = document.querySelector('div.totals div.amount.price.total');
+    }
+
+    _setTotal() {
+        this.subtotal_div.textContent = this.subtotal.toFixed(2);
+        this.tax_div.textContent = this.tax.toFixed(2);
+        this.total_div.textContent = this.total.toFixed(2);
+    }
+
+    updateTotal(amount) {
+        this.subtotal = amount;
+        this.tax = amount * this.tax_rate;
+        this.total = this.subtotal + this.tax;
+        this._setTotal();
     }
 }
 
@@ -101,6 +146,7 @@ class Cart {
     cart_ul = document.querySelector('ul.cart-summary');
     cart_template = this.cart_ul.querySelector('li.template.hide');
     items = new Array();
+    total_amount = new Totals();
 
     constructor() {
         console.log(this.cart_template);
@@ -111,13 +157,21 @@ class Cart {
         item_clone.classList.remove('hide', 'template');
         this.cart_ul.appendChild(item_clone);
         let new_index = this.items.length + 1;
-        let new_item = new MenuItem(item_clone, new_index, name, price, image);
+        let new_item = new MenuItem(item_clone, new_index, name, price, image, this.notify);
         return new_item;
     }
     
     addItem(name, price, image) {
         let n = this._newItem(name, price, image);
         this.items.push(n);
+    }
+
+    notify = e => {
+        let amount = 0;
+        for (let item of this.items) {
+            amount += (item.price * item.quantity);
+        }
+        this.total_amount.updateTotal(amount);
     }
 }
 
