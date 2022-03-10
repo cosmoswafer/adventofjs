@@ -42,3 +42,9 @@ const menuItems = [
         count: 0
     }
 ]
+
+export class App {
+    constructor() {
+        console.log("Hi there!");
+    }
+}
