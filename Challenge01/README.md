@@ -1,6 +1,8 @@
-![Advent of JavaScript](screen.gif)
-
 # Day 1 - Pomodoro Timer
+
+## Overview
+
+![Advent of JavaScript](screen.gif)
 
 ## Challenge
 

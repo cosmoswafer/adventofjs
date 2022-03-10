@@ -1,6 +1,8 @@
-![Advent of JavaScript](https://coachtestprep.s3.amazonaws.com/direct-uploads/user-117025/606c2525-ca81-4d85-ac27-164a86df3194/Twitter%20post%20-%201.png)
-
 # Day 2 - an eCommerce component
+
+## Overview
+
+![Advent of JavaScript](https://coachtestprep.s3.amazonaws.com/direct-uploads/user-117025/606c2525-ca81-4d85-ac27-164a86df3194/Twitter%20post%20-%201.png)
 
 ## Challenge
 
