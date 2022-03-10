@@ -284,3 +284,11 @@ button.in-cart {
   color: #6B00F5;
 }
 
+
+.hide {
+    display: none;
+}
+
+.template.hide {
+    display: none;
+}

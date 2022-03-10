@@ -4,7 +4,7 @@ export const menuItems = [
         price: 223,
         image: 'plate__french-fries.png',
         alt: 'French Fries',
-        count: 0
+        count: 1
     },
     {
         name: 'Salmon and Vegetables',
