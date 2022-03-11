@@ -154,10 +154,11 @@ export class Cart {
     }
 
     _removeItem(index) {
+        console.log(`>>>Trying to remove item from index ${index}`);
         console.log(`Items before removal: ${JSON.stringify(this.items)}`);
         let item = this.cart_ul.querySelector(`li[order="${index}"]`);
         this.cart_ul.removeChild(item);
-        this.items.splice(Number(index));
+        this.items = this.items.filter(e => e.order != index);
         console.log(`Remaining items: ${JSON.stringify(this.items)}`);
     }
     
