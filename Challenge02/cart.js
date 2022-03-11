@@ -55,6 +55,11 @@ class MenuItem {
     _setOrder(order) {
         this.order = order;
         this.order_div.textContent = this.order;
+        this.menu_item_li.setAttribute('order', order);
+    }
+
+    setOrder(order) {
+        this._setOrder(order);
     }
 
     _setName(name) {
@@ -74,6 +79,7 @@ class MenuItem {
     }
 
     _setQuantity() {
+        console.log("Adjust quantity "+this.quantity);
         this.quantity_div.textContent = this.quantity;
     }
 
@@ -146,18 +152,55 @@ export class Cart {
         let new_item = new MenuItem(item_clone, new_index, name, price, image, this.notify);
         return new_item;
     }
+
+    _removeItem(index) {
+        console.log(`Items before removal: ${JSON.stringify(this.items)}`);
+        let item = this.cart_ul.querySelector(`li[order="${index+1}"]`);
+        this.cart_ul.removeChild(item);
+        this.items.splice(index,1);
+        console.log(`Remaining items: ${JSON.stringify(this.items)}`);
+    }
     
     addItem(name, price, image) {
         let n = this._newItem(name, price, image);
         this.items.push(n);
+        this.notify();
     }
 
-    notify = e => {
+    _targetRemoval() {
+        let rm_targets = new Array();
+        for (let i=0; i<this.items.length; i++) {
+            let item = this.items[i];
+            if (item.quantity < 0) rm_targets.push(i);
+        }
+        return rm_targets;
+    }
+
+    _reorderItems() {
+        for (let i=0; i<this.items.length; i++) {
+            this.items[i].setOrder(i+1);
+        }
+    }
+
+    _updateCart() {
+        let rm_targets = this._targetRemoval();
+        for (let i=0; i<rm_targets.length; i++) {
+            this._removeItem(i);
+        }
+        this._reorderItems();
+    }
+
+    _updateAmount() {
         let amount = 0;
         for (let item of this.items) {
             amount += (item.price * item.quantity);
         }
         this.total_amount.updateTotal(amount);
+    }
+
+    notify = e => {
+        this._updateCart();
+        this._updateAmount();
     }
 }
 

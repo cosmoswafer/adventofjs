@@ -7,5 +7,6 @@ export class App {
 
     constructor() {
         this.cart.addItem('Fuck n Fine XXX_', 189.77, 'images/plate__fish-sticks-fries.png');
+        this.cart.addItem('Macdonal YYY_', 21.33, 'images/plate__fish-sticks-fries.png');
     }
 }
