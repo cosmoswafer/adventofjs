@@ -79,7 +79,6 @@ class MenuItem {
     }
 
     _setQuantity() {
-        console.log(`Adjust quantity of item: ${this.name} to ${this.quantity}`);
         this.quantity_div.textContent = this.quantity;
     }
 
@@ -138,6 +137,7 @@ class Totals {
 export class Cart {
     cart_ul = document.querySelector('ul.cart-summary');
     cart_template = this.cart_ul.querySelector('li.template.hide');
+    cart_empty_p = document.querySelector('div.panel.cart p.empty');
     items = new Array();
     total_amount = new Totals();
 
@@ -154,18 +154,21 @@ export class Cart {
     }
 
     _removeItem(index) {
-        console.log(`>>>Trying to remove item from index ${index}`);
-        console.log(`Items before removal: ${JSON.stringify(this.items)}`);
         let item = this.cart_ul.querySelector(`li[order="${index}"]`);
         this.cart_ul.removeChild(item);
+
         this.items = this.items.filter(e => e.order != index);
-        console.log(`Remaining items: ${JSON.stringify(this.items)}`);
+    }
+
+    _hideEmptyCart() {
+        this.cart_empty_p.classList.add('hide');
     }
     
     addItem(name, price, image) {
         let n = this._newItem(name, price, image);
         this.items.push(n);
         this.notify();
+        this._hideEmptyCart();
     }
 
     _targetRemoval() {
@@ -183,12 +186,20 @@ export class Cart {
         }
     }
 
+    _emptyCart() {
+        this.cart_empty_p.classList.remove('hide');
+    }
+
     _updateCart() {
         let rm_targets = this._targetRemoval();
         for (let i of rm_targets) {
             this._removeItem(i);
         }
         this._reorderItems();
+
+        if (this.items.length === 0) {
+            this._emptyCart();
+        }
     }
 
     _updateAmount() {
