@@ -79,7 +79,7 @@ class MenuItem {
     }
 
     _setQuantity() {
-        console.log("Adjust quantity "+this.quantity);
+        console.log(`Adjust quantity of item: ${this.name} to ${this.quantity}`);
         this.quantity_div.textContent = this.quantity;
     }
 
@@ -155,9 +155,9 @@ export class Cart {
 
     _removeItem(index) {
         console.log(`Items before removal: ${JSON.stringify(this.items)}`);
-        let item = this.cart_ul.querySelector(`li[order="${index+1}"]`);
+        let item = this.cart_ul.querySelector(`li[order="${index}"]`);
         this.cart_ul.removeChild(item);
-        this.items.splice(index,1);
+        this.items.splice(Number(index));
         console.log(`Remaining items: ${JSON.stringify(this.items)}`);
     }
     
@@ -171,7 +171,7 @@ export class Cart {
         let rm_targets = new Array();
         for (let i=0; i<this.items.length; i++) {
             let item = this.items[i];
-            if (item.quantity < 0) rm_targets.push(i);
+            if (item.quantity < 0) rm_targets.push(item.order);
         }
         return rm_targets;
     }
@@ -184,7 +184,7 @@ export class Cart {
 
     _updateCart() {
         let rm_targets = this._targetRemoval();
-        for (let i=0; i<rm_targets.length; i++) {
+        for (let i of rm_targets) {
             this._removeItem(i);
         }
         this._reorderItems();
