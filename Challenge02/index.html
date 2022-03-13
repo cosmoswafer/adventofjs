@@ -12,6 +12,24 @@
       <div class="panel menu">
         <h1>To Go Menu</h1>
         <ul class="menu">
+          <li class="template" style="display: none;">
+            <div class="plate">
+              <img
+                src="images/plate__french-fries.png"
+                alt="French Fries"
+                class="plate"
+              />
+            </div>
+            <div class="content">
+              <p class="menu-item">French Fries with Ketchup</p>
+              <p class="price">$2.23</p>
+              <button class="in-cart">
+                <img src="images/check.svg" alt="Check" />
+                In Cart
+              </button>
+            </div>
+          </li>
+
           <li>
             <div class="plate">
               <img
@@ -104,11 +122,11 @@
 
       <div class="panel cart">
         <h1>Your Cart</h1>
-        <p class="empty hide">Your cart is empty.</p>
+        <p class="empty">Your cart is empty.</p>
 
         <ul class="cart-summary">
           <!-- cart item template -->
-          <li class="template hide">
+          <li class="template" style="display: none;">
             <div class="plate">
               <img
                 src="images/plate__fish-sticks-fries.png"
@@ -134,7 +152,7 @@
           </li>
         </ul>
 
-        <div class="totals">
+        <div class="totals" style="display: none;">
           <div class="subtotal label">Subtotal:</div>
           <div class="amount subtotal"><p class="price">$10.80</p></div>
           <div class="tax label">Tax:</div>

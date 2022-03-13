@@ -334,11 +334,3 @@ p.price:before {
   font-weight: bold;
 }
 
-.panel.cart ul.cart-summary li.template.hide {
-  /*Patch the cart item template*/
-  display: none;
-}
-
-.hide {
-  display: none;
-}

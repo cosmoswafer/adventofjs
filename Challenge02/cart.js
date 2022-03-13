@@ -11,8 +11,7 @@ class MenuItem {
   name_p;
   price_p;
   image_img;
-  quantity_div;
-  order_div;
+  quantity_divs;
   subtotal_div;
   decrease_btn;
   increase_btn;
@@ -39,8 +38,8 @@ class MenuItem {
     this.name_p = li.querySelector("p.menu-item");
     this.price_p = li.querySelector("p.price");
     this.image_img = li.querySelector("div.plate img");
-    this.quantity_div = li.querySelector("div.quantity__wrapper div.quantity");
-    this.order_div = li.querySelector("div.plate div.quantity");
+    this.quantity_divs = [li.querySelector("div.quantity__wrapper div.quantity"),
+     li.querySelector("div.plate div.quantity")]
     this.subtotal_div = li.querySelector("div.subtotal p.price");
     this.decrease_btn = li.querySelector(
       "div.quantity__wrapper button.decrease"
@@ -57,12 +56,7 @@ class MenuItem {
 
   _setOrder(order) {
     this.order = order;
-    this.order_div.textContent = this.order;
     this.menu_item_li.setAttribute("order", order);
-  }
-
-  setOrder(order) {
-    this._setOrder(order);
   }
 
   _setName(name) {
@@ -82,7 +76,9 @@ class MenuItem {
   }
 
   _setQuantity() {
-    this.quantity_div.textContent = this.quantity;
+    for (let e of this.quantity_divs) {
+        e.textContent = this.quantity;
+    }
   }
 
   _setSubtotal() {
@@ -141,7 +137,7 @@ class Totals {
 
 export class Cart {
   cart_ul = document.querySelector("ul.cart-summary");
-  cart_template = this.cart_ul.querySelector("li.template.hide");
+  cart_template = this.cart_ul.querySelector("li.template");
   cart_empty_p = document.querySelector("div.panel.cart p.empty");
   cart_summary_ul = document.querySelector("div.panel.cart ul.cart-summary");
   cart_totals_div = document.querySelector("div.panel.cart div.totals");
@@ -152,8 +148,9 @@ export class Cart {
 
   _newItem(name, price, image) {
     let item_clone = this.cart_template.cloneNode(true);
-    item_clone.classList.remove("hide", "template");
-    this.cart_ul.appendChild(item_clone);
+    item_clone.classList.remove("template");
+    item_clone.style.display = "";
+    this.cart_ul.prepend(item_clone);
     let new_index = this.items.length + 1;
     let new_item = new MenuItem(
       item_clone,
@@ -174,9 +171,9 @@ export class Cart {
   }
 
   _hideEmptyCart() {
-    this.cart_empty_p.classList.add("hide");
-    this.cart_summary_ul.classList.remove("hide");
-    this.cart_totals_div.classList.remove("hide");
+    this.cart_empty_p.style.display = "none";
+    this.cart_summary_ul.style.display = "";
+    this.cart_totals_div.style.display = "";
   }
 
   addItem(name, price, image) {
@@ -195,16 +192,10 @@ export class Cart {
     return rm_targets;
   }
 
-  _reorderItems() {
-    for (let i = 0; i < this.items.length; i++) {
-      this.items[i].setOrder(i + 1);
-    }
-  }
-
   _emptyCart() {
-    this.cart_empty_p.classList.remove("hide");
-    this.cart_summary_ul.classList.add("hide");
-    this.cart_totals_div.classList.add("hide");
+    this.cart_empty_p.style.display = "";
+    this.cart_summary_ul.style.display = "none";
+    this.cart_totals_div.style.display = "none";
   }
 
   _updateCart() {
@@ -212,7 +203,6 @@ export class Cart {
     for (let i of rm_targets) {
       this._removeItem(i);
     }
-    this._reorderItems();
 
     if (this.items.length === 0) {
       this._emptyCart();
