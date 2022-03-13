@@ -26,7 +26,6 @@ https://fonts.google.com/specimen/Poppins?query=poppins
 
 ---
 
-
 # FONTS
 
 - Poppins (400 and 700) - https://fonts.google.com/specimen/Poppins

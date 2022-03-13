@@ -1,164 +1,344 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 :root {
-    --main-font: 'Poppins', sans-serif;
-    /*Colours*/
-    --bkg: #EFF0F6;
-    /*Dimension*/
-    --panel_width: 375px;
-    --panel_height: 812px;
-    --top_margin: 106px;
-    --gap_in_panel: 50px;
-    /*Menu items*/
-    --menu-img-size: 148px;
-    --button-bkg: #6B00F5;
-    --button-in-cart: #000000;
-}
-
-body {
-    background: url('./images/bg__left.svg') left center no-repeat,
-        url('./images/bg__btm-right.svg') right bottom no-repeat,
-        var(--bkg) url('./images/bg__top-right.svg') right top no-repeat;
-
-    min-width: 100vw;
-    min-height: 100vh;
-    padding: 0;
-    margin: 0;
-    font-family: var(--main-font);
-}
-
-p {
-    margin: 0;
-    padding: 0;
-}
-
-.wrapper {
-    display: grid;
-    column-gap: var(--gap_in_panel);
-    grid-template-columns: auto var(--panel_width) var(--panel_width) auto;
-    grid-template-rows: auto var(--panel_height) auto;
-    height: 100vh;
-}
-
-.panel {
-    background: #FFFFFF;
-    box-shadow: 0px 0px 70px #C7CBE3;
-    border-radius: 25px;
-    overflow-y: scroll;
-    scrollbar-width: none; /*Hacks for Firefox*/
+  --main-font: "Poppins", sans-serif;
+  /*Colours*/
+  --bkg: #eff0f6;
+  --white: #ffffff;
+  --black: #000000;
+  /*Dimension*/
+  --panel_width: 375px;
+  --panel_height: 812px;
+  --top_margin: 106px;
+  --gap_in_panel: 50px;
 }
 
 .panel.menu {
-    grid-column: 2;
-    grid-row: 2;
+  --menu-img-size: 148px;
+  --button-bkg: #6b00f5;
+  --button-in-cart: var(--black);
 }
 
 .panel.cart {
-    grid-column: 3;
-    grid-row: 2;
+  --plate-img-size: 64px;
+  --plate-order-size: calc(var(--plate-img-size) / 2);
+  --order-position: calc((var(--plate-img-size) - var(--plate-order-size)) / 2);
+  --item-fsize: 18px;
+  --price-fsize: 16px;
+  --subtotal-fsize: 32px;
+  --btn-colour: #6b00f5;
+  --btn-size: 32px;
+  --line-colour: #d7d7f9;
+  --gap-top: 43px;
+  --gap-bottom: 33px;
+}
+
+body {
+  background: url("./images/bg__left.svg") left center no-repeat,
+    url("./images/bg__btm-right.svg") right bottom no-repeat,
+    var(--bkg) url("./images/bg__top-right.svg") right top no-repeat;
+
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: var(--main-font);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+p.price:before {
+  content: "$";
+}
+
+.wrapper {
+  display: grid;
+  column-gap: var(--gap_in_panel);
+  grid-template-columns: auto var(--panel_width) var(--panel_width) auto;
+  grid-template-rows: auto var(--panel_height) auto;
+  height: 100vh;
+}
+
+.panel {
+  background: #ffffff;
+  box-shadow: 0px 0px 70px #c7cbe3;
+  border-radius: 25px;
+  overflow-y: scroll;
+  scrollbar-width: none; /*Hacks for Firefox*/
+}
+
+.panel.menu {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.panel.cart {
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .panel h1 {
-    padding: 50px 0 20px 38px;
-    margin: 0;
+  padding: 50px 0 20px 38px;
+  margin: 0;
 }
 
 .panel ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.panel ul.menu li {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-left: 15px;
-    padding-right: 30px;
-    position: relative;
+.panel.menu ul.menu li {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-left: 15px;
+  padding-right: 30px;
+  position: relative;
 }
 
-.panel ul.menu li:nth-child(4n + 1):before {
-    --bkg-colour: rgba(122, 179, 243, 0.2);
+.panel.menu ul.menu li:nth-child(4n + 1):before {
+  --bkg-colour: rgba(122, 179, 243, 0.2);
 }
-.panel ul.menu li:nth-child(4n + 2):before {
-    --bkg-colour: rgba(233, 121, 178, 0.2);
+.panel.menu ul.menu li:nth-child(4n + 2):before {
+  --bkg-colour: rgba(233, 121, 178, 0.2);
 }
-.panel ul.menu li:nth-child(4n + 3):before {
-    --bkg-colour: rgba(215, 215, 249, 0.2);
+.panel.menu ul.menu li:nth-child(4n + 3):before {
+  --bkg-colour: rgba(215, 215, 249, 0.2);
 }
-.panel ul.menu li:nth-child(4n):before {
-    --bkg-colour: rgba(120, 247, 187, 0.2);
-}
-
-.panel ul.menu li:before {
-    background: var(--bkg-colour);
-    border-radius: 20px 0 0 20px;
-    content: '';
-    display: block;
-    height: calc(100% - 30px);
-    left: 30px;
-    position: absolute;
-    top: 15px;
-    width: calc(100% - 30px);
-    z-index: 1;
+.panel.menu ul.menu li:nth-child(4n):before {
+  --bkg-colour: rgba(120, 247, 187, 0.2);
 }
 
-.panel ul.menu li .plate {
-    z-index: 2;
+.panel.menu ul.menu li:before {
+  background: var(--bkg-colour);
+  border-radius: 20px 0 0 20px;
+  content: "";
+  display: block;
+  height: calc(100% - 30px);
+  left: 30px;
+  position: absolute;
+  top: 15px;
+  width: calc(100% - 30px);
+  z-index: 1;
 }
 
-.panel ul.menu li .plate img.plate {
-    width: var(--menu-img-size);
-    height: var(--menu-img-size);
+.panel.menu ul.menu li .plate {
+  z-index: 2;
 }
 
-.panel ul.menu .content {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 16px;
-    padding-top: 40px;
-    z-index: 2;
+.panel.menu ul.menu li .plate img.plate {
+  width: var(--menu-img-size);
+  height: var(--menu-img-size);
 }
 
-.panel ul.menu .content p.menu-item {
-    font-size: 18px;
-    line-height: 20px;
+.panel.menu ul.menu .content {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 40px;
+  z-index: 2;
 }
 
-p.price {
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 32px;
+.panel.menu ul.menu .content p.menu-item {
+  font-size: 18px;
+  line-height: 20px;
 }
 
-.menu .content p.price {
+.panel.menu p.price {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 32px;
 }
 
-.menu .content button {
-    align-items: center;
-    background: var(--button-bkg);
-    border: 0;
-    border-radius: 20px;
-    color: white;
-    display: flex;
-    font-family: var(--main-font);
-    font-size: 16px;
-    font-weight: bold;
-    gap: 10px;
-    justify-content: center;
-    line-height: 24px;
-    padding: 4px 18px;
+.panel.menu .menu .content p.price {
 }
 
-.menu .content button.in-cart {
-    background: var(--button-in-cart);
+.panel.menu .menu .content button {
+  align-items: center;
+  background: var(--button-bkg);
+  border: 0;
+  border-radius: 20px;
+  color: var(--white);
+  display: flex;
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: bold;
+  gap: 10px;
+  justify-content: center;
+  line-height: 24px;
+  padding: 4px 18px;
 }
 
-.panel h1 + p.empty {
-    padding: 0 0 20px 38px;
+.panel.menu .menu .content button.in-cart {
+  background: var(--button-in-cart);
+}
+
+.panel.cart h1 + p.empty {
+  padding: 0 0 20px 38px;
+}
+
+.panel.cart {
+  padding: 0 29px 0 25px;
+}
+
+.panel.cart ul.cart-summary li {
+  border-bottom: 1px solid var(--line-colour);
+  display: grid;
+  grid-template-columns: var(--plate-img-size) 18px 111px 128px;
+  grid-template-rows: repeat(3, calc(var(--plate-img-size) / 2));
+  grid-template-areas:
+    "plate . menu-item menu-item"
+    "plate . price price"
+    ". . quantity subtotal";
+  padding-bottom: var(--gap-top);
+  margin-bottom: var(--gap-bottom);
+}
+
+.panel.cart ul.cart-summary li:last-child {
+  border-bottom: 5px solid var(--line-colour);
+}
+
+.panel.cart ul.cart-summary li .plate {
+  position: relative;
+  grid-area: plate;
+}
+
+.panel.cart ul.cart-summary li .plate img {
+  filter: drop-shadow(0px 5.02591px 5.02591px rgba(0, 0, 0, 0.25));
+  width: 100%;
+  z-index: 1;
+}
+
+.panel.cart ul.cart-summary li .plate .quantity {
+  background: var(--black);
+  border-radius: 20px;
+  color: var(--white);
+  font-size: calc(var(--plate-order-size) / 2);
+  font-weight: bold;
+  height: var(--plate-order-size);
+  left: var(--order-position);
+  line-height: var(--plate-order-size);
+  position: absolute;
+  text-align: center;
+  top: var(--order-position);
+  width: var(--plate-order-size);
+  z-index: 2;
+}
+
+.panel.cart ul.cart-summary li p.menu-item {
+  font-size: var(--item-fsize);
+  grid-area: menu-item;
+}
+
+.panel.cart ul.cart-summary li p.price {
+  font-size: var(--price-fsize);
+  font-weight: bold;
+  grid-area: price;
+}
+
+.panel.cart ul.cart-summary li .quantity__wrapper {
+  align-items: center;
+  display: grid;
+  grid-area: quantity;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  text-align: center;
+}
+
+.panel.cart ul.cart-summary li .quantity__wrapper button {
+  align-items: center;
+  background: var(--btn-colour);
+  border: 0;
+  border-radius: 20px;
+  display: flex;
+  height: var(--btn-size);
+  justify-content: center;
+  width: var(--btn-size);
+}
+
+.panel.cart ul.cart-summary li .quantity__wrapper button img {
+  height: calc(var(--btn-size) * 0.6);
+}
+
+.panel.cart ul.cart-summary li .quantity__wrapper button.increase img {
+  transform: rotate(-180deg);
+}
+
+.panel.cart ul.cart-summary li .quantity__wrapper .quantity {
+  font-size: var(--price-fsize);
+  font-weight: bold;
+}
+
+.panel.cart ul.cart-summary li .subtotal {
+  grid-area: subtotal;
+  text-align: right;
+}
+
+.panel.cart ul.cart-summary li .subtotal p.price {
+  font-size: var(--subtotal-fsize);
+  line-height: var(--subtotal-fsize);
+}
+
+.panel.cart .totals {
+  align-items: center;
+  display: grid;
+  gap: 25px;
+  grid-template-areas:
+    ". subtotal-label subtotal"
+    ". tax-label tax"
+    ". total-label total";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: right;
+  text-align: right;
+}
+
+.panel.cart .totals .subtotal.label {
+  grid-area: subtotal-label;
+}
+
+.panel.cart .totals .subtotal {
+  grid-area: subtotal;
+}
+
+.panel.cart .totals .tax.label {
+  grid-area: tax-label;
+}
+
+.panel.cart .totals .tax {
+  grid-area: tax;
+}
+
+.panel.cart .totals .total.label {
+  grid-area: total-label;
+}
+
+.panel.cart .totals .total {
+  grid-area: total;
+}
+
+.panel.cart .totals .subtotal.label,
+.panel.cart .totals .tax.label,
+.panel.cart .totals .total.label {
+  font-size: var(--price-fsize);
+}
+
+.panel.cart .totals .subtotal,
+.panel.cart .totals .tax,
+.panel.cart .totals .total {
+  font-size: var(--subtotal-fsize);
+  font-weight: bold;
+}
+
+.panel.cart ul.cart-summary li.template.hide {
+  /*Patch the cart item template*/
+  display: none;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
