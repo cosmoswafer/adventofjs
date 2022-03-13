@@ -238,6 +238,7 @@ p.price:before {
   font-size: var(--price-fsize);
   font-weight: bold;
   grid-area: price;
+  text-align: right;
 }
 
 .panel.cart ul.cart-summary li .quantity__wrapper {
@@ -333,4 +334,3 @@ p.price:before {
   font-size: var(--subtotal-fsize);
   font-weight: bold;
 }
-

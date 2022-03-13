@@ -1,6 +1,11 @@
-import { menuItems } from "./storage.js";
+import { Menu } from "./menu.js";
 import { Cart } from "./cart.js";
 
+import { menuItems } from "./storage.js";
+
 let cart = new Cart();
-cart.addItem("Fuck n Fine XXX_", 189.77, "images/plate__fish-sticks-fries.png");
-cart.addItem("Macdonal YYY_", 21.33, "images/plate__fish-sticks-fries.png");
+let menu = new Menu(cart);
+
+for (let i of menuItems) {
+  menu.addItem(i);
+}

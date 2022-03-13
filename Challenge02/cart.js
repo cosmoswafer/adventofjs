@@ -1,3 +1,6 @@
+import { conf } from "./settings.js";
+import { menuItems } from "./storage.js";
+
 class MenuItem {
   name;
   price;
@@ -38,8 +41,10 @@ class MenuItem {
     this.name_p = li.querySelector("p.menu-item");
     this.price_p = li.querySelector("p.price");
     this.image_img = li.querySelector("div.plate img");
-    this.quantity_divs = [li.querySelector("div.quantity__wrapper div.quantity"),
-     li.querySelector("div.plate div.quantity")]
+    this.quantity_divs = [
+      li.querySelector("div.quantity__wrapper div.quantity"),
+      li.querySelector("div.plate div.quantity"),
+    ];
     this.subtotal_div = li.querySelector("div.subtotal p.price");
     this.decrease_btn = li.querySelector(
       "div.quantity__wrapper button.decrease"
@@ -77,7 +82,7 @@ class MenuItem {
 
   _setQuantity() {
     for (let e of this.quantity_divs) {
-        e.textContent = this.quantity;
+      e.textContent = this.quantity;
     }
   }
 
@@ -117,7 +122,7 @@ class Totals {
   tax_div = document.querySelector("div.totals div.amount.tax p.price");
   total_div = document.querySelector("div.totals div.amount.total p.price");
 
-  constructor(notify_func) {
+  constructor() {
     this.updateTotal(0);
   }
 
@@ -183,6 +188,21 @@ export class Cart {
     this._hideEmptyCart();
   }
 
+  _inCart(name, price) {
+    let r = false;
+    for (let i of this.items) {
+      if (i.name === name && i.price === price) r = true;
+    }
+    return r;
+  }
+
+  addFromStorage(index) {
+    let item = menuItems[index];
+    if (!this._inCart(item.name, item.price)) {
+      this.addItem(item.name, item.price, conf.image_prefix + item.image);
+    }
+  }
+
   _targetRemoval() {
     let rm_targets = new Array();
     for (let i = 0; i < this.items.length; i++) {
@@ -217,7 +237,7 @@ export class Cart {
     this.total_amount.updateTotal(amount);
   }
 
-  notify = (e) => {
+  notify = () => {
     this._updateCart();
     this._updateAmount();
   };
