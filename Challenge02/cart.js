@@ -138,6 +138,8 @@ export class Cart {
     cart_ul = document.querySelector('ul.cart-summary');
     cart_template = this.cart_ul.querySelector('li.template.hide');
     cart_empty_p = document.querySelector('div.panel.cart p.empty');
+    cart_summary_ul = document.querySelector('div.panel.cart ul.cart-summary');
+    cart_totals_div = document.querySelector('div.panel.cart div.totals');
     items = new Array();
     total_amount = new Totals();
 
@@ -162,6 +164,8 @@ export class Cart {
 
     _hideEmptyCart() {
         this.cart_empty_p.classList.add('hide');
+        this.cart_summary_ul.classList.remove('hide');
+        this.cart_totals_div.classList.remove('hide');
     }
     
     addItem(name, price, image) {
@@ -188,6 +192,8 @@ export class Cart {
 
     _emptyCart() {
         this.cart_empty_p.classList.remove('hide');
+        this.cart_summary_ul.classList.add('hide');
+        this.cart_totals_div.classList.add('hide');
     }
 
     _updateCart() {
