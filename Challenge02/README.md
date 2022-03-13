@@ -17,3 +17,27 @@
 - Tax is based on the state of Tennessee sales tax: 0.0975
 
 ## Write-up
+
+### CSS
+
+Used concepts:
+
+* Grid layout 
+  * Sometimes could replace flex layout
+* Flex layout to quickly center image and text
+* Absolution position to place image with offset
+* The calc function to compute values 
+
+Most of the elements were using grid layout. 
+When trying to center different elemnets, e.g. images and text, flex layout is the easier wayt.
+If we want to vertically center text, using line height is the easiest method.
+
+### JavaScript
+
+Seems using JavaScript template string to render the entire cart is easier.
+However, rendering large HTML code supposed is slower.
+Therefore I use DOM methods to update the individual element in cart.
+
+I used the Mediator design patter here.
+When updating cart items, they will notify the parent cart object to update subtotal.
+Similar behaviour in the menu items as well.
