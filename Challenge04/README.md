@@ -2,7 +2,7 @@
 
 ![Advent of JavaScript](https://coachtestprep.s3.amazonaws.com/direct-uploads/user-117025/ced321ac-51ef-4194-beec-ea544a098558/computer-keyboard.png)
 
-## Challenge 
+## Challenge
 
 **Users should be able to:**
 
@@ -14,4 +14,3 @@
 ## Write-up
 
 ### CSS
-
