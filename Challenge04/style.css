@@ -1,8 +1,78 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --kb-bkg: #F6F6F6;
+    --teal: #60C1B6;
+    --gray: #868888;
+    --kb-height: 384px;
+    --kb-width: 1200px;
+    --font-size: 24px;
+    --key-size: 65px;
+    --key-gap: 12px;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+}
+
+#keyboard {
+    align-items: center;
+    background: var(--kb-bkg);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--key-gap);
+    height: var(--kb-height);
+    justify-content: center;
+    width: var(--kb-width);
+}
+
+.row {
+    display: flex;
+    gap: var(--key-gap);
+}
+
+.key {
+    background: white;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    color: var(--teal);
+    font-family: 'Inter', sans-serif;
+    font-size: var(--font-size);
+    font-weight: bold;
+    height: var(--key-size);
+    line-height: var(--key-size);
+    text-align: center;
+    text-transform: uppercase;
+    width: var(--key-size);
+}
+
+.del, .tab, .caps, .enter, .shift {
+    color: var(--gray);
+}
+
+.del {
+    width: calc(var(--key-size) * 1.6769);
+}
+
+.tab {
+    width: calc(var(--key-size) * 1.6615);
+}
+
+.caps {
+    width: calc(var(--key-size) * 1.9846);
+}
+
+.enter {
+    width: calc(var(--key-size) * 1.8615);
+}
+
+.shift {
+    width: calc(var(--key-size) * 2.5385);
 }
