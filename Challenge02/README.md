@@ -41,3 +41,9 @@ Therefore I use DOM methods to update the individual element in cart.
 I used the Mediator design patter here.
 When updating cart items, they will notify the parent cart object to update subtotal.
 Similar behaviour in the menu items as well.
+
+### Improvements 
+
+We could add another class to control both Cart and Menu.
+When user click the buttons, e.g. Adding items into cart or Removing items from cart,
+the central controller will be notified and refresh or re-render both cart and menu.
