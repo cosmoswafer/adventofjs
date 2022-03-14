@@ -1,8 +1,24 @@
+:root {
+    --bkg-colour: #37B2C3;
+}
+
+body {
+    background: var(--bkg-colour);
+    display: grid;
+    grid-template-areas: ". . ."
+                        ". app ."
+                        ". . .";
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    height: 100vh;
+    width: 100vw;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    grid-area: app;
+}
+
+svg path.white-key:hover,
+svg path.black-key:hover{
+    fill: red;
 }
