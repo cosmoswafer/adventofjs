@@ -35,4 +35,3 @@ I used vim and replace by regular expresions.
 ### Improvements
 
 I added randomly assign audio files earch time loaded the page.
-
