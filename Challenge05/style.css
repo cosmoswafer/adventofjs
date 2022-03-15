@@ -38,8 +38,8 @@ body {
 background: white;
 box-shadow: 0px 4px 20px #E8EAEF;
 border-radius: 0 32px 32px 0;
-    height: var(--list-height);
-    width: var(--list-width);
+    height: calc(var(--list-height) - 60px - 60px);
+    width: calc(var(--list-width) - 80px - 55px);
     padding: 60px 80px 60px 55px;
 }
 
@@ -50,9 +50,22 @@ border-radius: 0 32px 32px 0;
     margin-bottom: 40px;
 }
 
+.episodes .list ol {
+    counter-reset: episodes;
+    list-style-type: none;
+}
+
 .episodes .list ol li {
+    align-items: center;
+    display: flex;
     font-size: var(--list-fsize);
     margin-bottom: 24px;
+}
+
+.episodes .list ol li:before {
+    background: url("./images/checkbox--checked.svg");
+    counter-increment: episodes;
+    content: counter(episodes) " || ";
 }
 
 .drop-shadow {
