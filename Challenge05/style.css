@@ -1,19 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap');
 
 :root {
     --bkg-colour: #F3F3F3;
     --title-colour: #A7A7A7;
     --font-colour: #4E4E4E;
     --fcolour-completed: #C9CDD1;
+    --title-fsize: 16px;
+    --list-fsize: 24px;
+    /*Dimension*/
+    --cover-box: 584px;
+    --list-width: 627px;
+    --list-height: 548px;
 }
 
 body {
     font-family: 'Nunito Sans', sans-serif;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
 }
 
 #app {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.episodes .cover img {
+    height: var(--cover-box);
+    width: var(--cover-box);
+}
+
+.episodes .list {
+background: white;
+box-shadow: 0px 4px 20px #E8EAEF;
+border-radius: 0 32px 32px 0;
+    height: var(--list-height);
+    width: var(--list-width);
+    padding: 60px 80px 60px 55px;
+}
+
+.episodes .list .heading {
+    color: var(--title-colour);
+    font-size: var(--title-fsize);
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.episodes .list ol li {
+    font-size: var(--list-fsize);
+    margin-bottom: 24px;
 }
 
 .drop-shadow {
-    filter: drop-shadow(0px 5.40459px 32.4276px #453F3F);
+    /*filter: drop-shadow(0px 5.40459px 32.4276px #453F3F);*/
+    filter: drop-shadow(0px 4px 24px #453F3F);
 }
