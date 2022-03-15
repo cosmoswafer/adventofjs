@@ -64,7 +64,7 @@ export class Timer {
     clickStart = e => {
         this._startTimer();
         this._toggleButtons();
-        this._endRing(false);
+        this._greenRing();
     }
 
     clickPause = e => {
@@ -73,18 +73,18 @@ export class Timer {
     }
 
     _startTimer() {
-        this.o_timer_sec = this.minutes * 60 + this.seconds;
-        this._start_time = performance.now();
+        this._end_time = performance.now() / 1000 + this.minutes * 60 + this.seconds;
         this.caf_stop = false;
         requestAnimationFrame(this._cafTimer);
     }
 
     _cafTimer = t => {
-        let elapsed = Math.floor(Math.abs(t - this._start_time) / 1000);
+        const elapsed = Math.floor(Math.abs(this._end_time - t) / 1000);
+        console.log(elapsed);
 
-        this.setTimer(this.o_timer_sec - elapsed);
+        this.setTimer(elapsed);
 
-        if (! this.caf_stop && elapsed < this.o_timer_sec) {
+        if (! this.caf_stop && elapsed > 0 ) {
             requestAnimationFrame(this._cafTimer);
         } else if (! this.caf_stop) {
             this._endTimer();
@@ -97,16 +97,16 @@ export class Timer {
 
     _endTimer() {
         alert("Time's up!");
-        this._endRing(true);
+        this._endRing();
         this._toggleButtons();
     }
 
-    _endRing(end) {
-        if (end) {
-            this.ring_circle.classList.add('ending');
-        } else {
-            this.ring_circle.classList.remove('ending');
-        }
+    _endRing() {
+        this.ring_circle.classList.add('ending');
+    }
+
+    _greenRing() {
+        this.ring_circle.classList.remove('ending');
     }
 
     editTimer = e => {

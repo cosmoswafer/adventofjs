@@ -11,6 +11,8 @@
     --cover-box: 584px;
     --list-width: 627px;
     --list-height: 548px;
+    --check-box: 41px;
+    --list-gap: 24px;
 }
 
 body {
@@ -59,16 +61,35 @@ border-radius: 0 32px 32px 0;
     align-items: center;
     display: flex;
     font-size: var(--list-fsize);
-    margin-bottom: 24px;
+    line-height: var(--check-box);
+    margin-bottom: var(--list-gap);
+    position: relative;
 }
 
 .episodes .list ol li:before {
-    background: url("./images/checkbox--checked.svg");
     counter-increment: episodes;
     content: counter(episodes) " || ";
+    text-align: center;
+    width: 2em;
+}
+
+.episodes .list ol li img {
+    height: var(--check-box);
+    left: -2em;
+    position: absolute;
+    width: var(--check-box);
+}
+
+.episodes .list ol li p {
+    margin: 0;
 }
 
 .drop-shadow {
     /*filter: drop-shadow(0px 5.40459px 32.4276px #453F3F);*/
     filter: drop-shadow(0px 4px 24px #453F3F);
 }
+
+.hide {
+    display: none;
+}
+
