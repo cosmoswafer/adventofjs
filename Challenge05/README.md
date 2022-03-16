@@ -8,7 +8,8 @@
 
 - See the list of podcast episodes
 - Checking off an episode will mark the episode as watched and will strike-through the title
-
+- See the list of podcast episodes
+- Check one episode, shift-click to select all the episodes in between
 
 ### Content
 

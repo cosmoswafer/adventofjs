@@ -1,95 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap");
 
 :root {
-    --bkg-colour: #F3F3F3;
-    --title-colour: #A7A7A7;
-    --font-colour: #4E4E4E;
-    --fcolour-completed: #C9CDD1;
-    --title-fsize: 16px;
-    --list-fsize: 24px;
-    /*Dimension*/
-    --cover-box: 584px;
-    --list-width: 627px;
-    --list-height: 548px;
-    --check-box: 41px;
-    --list-gap: 24px;
+  --bkg-colour: #f3f3f3;
+  --title-colour: #a7a7a7;
+  --font-colour: #4e4e4e;
+  --fcolour-completed: #c9cdd1;
+  --title-fsize: 16px;
+  --list-fsize: 24px;
+  /*Dimension*/
+  --cover-box: 584px;
+  --list-width: 627px;
+  --list-height: 548px;
+  --check-box: 41px;
+  --list-gap: 24px;
 }
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
+  font-family: "Nunito Sans", sans-serif;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
 }
 
 #app {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .episodes .cover img {
-    height: var(--cover-box);
-    width: var(--cover-box);
+  height: var(--cover-box);
+  width: var(--cover-box);
 }
 
 .episodes .list {
-background: white;
-box-shadow: 0px 4px 20px #E8EAEF;
-border-radius: 0 32px 32px 0;
-    height: calc(var(--list-height) - 60px - 60px);
-    width: calc(var(--list-width) - 80px - 55px);
-    padding: 60px 80px 60px 55px;
+  background: white;
+  box-shadow: 0px 4px 20px #e8eaef;
+  border-radius: 0 32px 32px 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(var(--list-height) - 60px - 60px);
+  width: calc(var(--list-width) - 80px - 55px);
+  padding: 60px 80px 60px 55px;
 }
 
 .episodes .list .heading {
-    color: var(--title-colour);
-    font-size: var(--title-fsize);
-    font-weight: 900;
-    margin-bottom: 40px;
+  color: var(--title-colour);
+  font-size: var(--title-fsize);
+  font-weight: 900;
+  margin-bottom: 40px;
 }
 
 .episodes .list ol {
-    counter-reset: episodes;
-    list-style-type: none;
+  counter-reset: episodes;
+  list-style-type: none;
+  overflow-y: hidden;
+}
+
+.episodes .list ol:hover {
+  overflow-y: scroll;
 }
 
 .episodes .list ol li {
-    align-items: center;
-    display: flex;
-    font-size: var(--list-fsize);
-    line-height: var(--check-box);
-    margin-bottom: var(--list-gap);
-    position: relative;
+  align-items: center;
+  display: flex;
+  font-size: var(--list-fsize);
+  line-height: var(--check-box);
+  margin-bottom: var(--list-gap);
+  position: relative;
 }
 
-.episodes .list ol li:before {
-    counter-increment: episodes;
-    content: counter(episodes) " || ";
-    text-align: center;
-    width: 2em;
+.episodes .list ol li p:before {
+  counter-increment: episodes;
+  content: counter(episodes) " || ";
+  text-align: center;
 }
 
-.episodes .list ol li img {
+.episodes .list ol li input[type="checkbox"] {
+  /*
     height: var(--check-box);
     left: -2em;
     position: absolute;
     width: var(--check-box);
+    */
+  display: none;
+}
+
+.episodes .list ol li input[type="checkbox"] + p {
+  background: url("./images/checkbox--unchecked.svg") no-repeat;
+  min-height: var(--check-box);
+  padding-left: calc(var(--check-box) * 1.2);
+}
+
+.episodes .list ol li input[type="checkbox"]:checked + p {
+  background: url("./images/checkbox--checked.svg") no-repeat;
+  text-decoration: line-through black 3px;
 }
 
 .episodes .list ol li p {
-    margin: 0;
+  margin: 0;
 }
 
 .drop-shadow {
-    /*filter: drop-shadow(0px 5.40459px 32.4276px #453F3F);*/
-    filter: drop-shadow(0px 4px 24px #453F3F);
+  /*filter: drop-shadow(0px 5.40459px 32.4276px #453F3F);*/
+  filter: drop-shadow(0px 4px 24px #453f3f);
 }
 
 .hide {
-    display: none;
+  display: none;
 }
-
