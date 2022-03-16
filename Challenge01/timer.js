@@ -80,7 +80,6 @@ export class Timer {
     _startTimer() {
         this._end_time = performance.now() + (this.minutes * 60 + this.seconds) * 1000;
         this.caf_stop = false;
-        console.log("Started the timer with end time: ", this._end_time);
         requestAnimationFrame(this._cafTimer);
     }
 
