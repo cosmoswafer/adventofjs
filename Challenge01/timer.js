@@ -9,6 +9,11 @@ export class Timer {
         this._findElements();
         this._configVariables();
         this._bindEvents();
+        this._requestPermission();
+    }
+
+    async _requestPermission() {
+        const permission = await Notification.requestPermission();
     }
 
     _findElements() {
