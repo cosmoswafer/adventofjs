@@ -80,7 +80,7 @@ export class Timer {
     }
 
     _cafTimer = t => {
-        const elapsed = Math.floor(Math.abs(this._end_time - t) / 1000);
+        const elapsed = Math.floor((this._end_time - t) / 1000);
 
         this.setTimer(elapsed);
 
