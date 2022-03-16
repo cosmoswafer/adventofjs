@@ -17,16 +17,3 @@ for (let content of content_list) {
   new_li.querySelector("p").textContent = content;
 }
 
-//Bind events for the check boxes
-const imgs = document.querySelectorAll(".episodes .list ol li img");
-
-for (let img of imgs) {
-  img.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("hide")) {
-      const p = e.target.parentElement;
-      for (let i of p.querySelectorAll("img")) {
-        i.classList.toggle("hide");
-      }
-    }
-  });
-}

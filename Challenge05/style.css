@@ -80,12 +80,6 @@ body {
 }
 
 .episodes .list ol li input[type="checkbox"] {
-  /*
-    height: var(--check-box);
-    left: -2em;
-    position: absolute;
-    width: var(--check-box);
-    */
   display: none;
 }
 

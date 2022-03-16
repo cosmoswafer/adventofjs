@@ -24,4 +24,13 @@
 
 ### CSS
 
+The checkboxes were replaced by an images. 
+Just set a background image for the label element.
+Use padding to shift the backage image to the left.
+Switching the background images could be done by pure CSS.
+
+I added additional scrollbar becuase if we follow the disign in Figma,
+the font size is too large and there is not enough space to display full contents.
+The contents in the challenges is different from the Figma design.
+
 ### JavaScript
