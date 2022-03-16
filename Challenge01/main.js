@@ -1,3 +1,4 @@
 import {Timer} from "./timer.js";
 
-let t = new Timer();
+const t = new Timer();
+const permission = await Notification.requestPermission();

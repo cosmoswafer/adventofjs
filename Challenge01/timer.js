@@ -96,7 +96,7 @@ export class Timer {
     }
 
     _endTimer() {
-        alert("Time's up!");
+        new Notification("Time's up!");
         this._endRing();
         this.setTimer(0);
         this._toggleButtons();
