@@ -43,8 +43,13 @@ body {
   display: flex;
   flex-direction: column;
   height: calc(var(--list-height) - 60px - 60px);
-  width: calc(var(--list-width) - 80px - 55px);
+  overflow-y: hidden;
   padding: 60px 80px 60px 55px;
+  width: calc(var(--list-width) - 80px - 55px);
+}
+
+.episodes .list:hover {
+    overflow-y: scroll;
 }
 
 .episodes .list .heading {
@@ -57,11 +62,6 @@ body {
 .episodes .list ol {
   counter-reset: episodes;
   list-style-type: none;
-  overflow-y: hidden;
-}
-
-.episodes .list ol:hover {
-  overflow-y: scroll;
 }
 
 .episodes .list ol li {
