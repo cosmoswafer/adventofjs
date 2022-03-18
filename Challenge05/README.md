@@ -1,6 +1,6 @@
 # Day 5 - Multiple Checkboxes
 
-![Advent of JavaScript]()
+![Advent of JavaScript](screen.gif)
 
 ## Challenge
 
