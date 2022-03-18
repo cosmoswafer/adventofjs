@@ -91,7 +91,8 @@ body {
 
 .episodes .list ol li input[type="checkbox"]:checked + p {
   background: url("./images/checkbox--checked.svg") no-repeat;
-  text-decoration: line-through black 3px;
+  color: gray;
+  text-decoration: line-through gray 3px;
 }
 
 .episodes .list ol li p {
