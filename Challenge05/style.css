@@ -49,7 +49,7 @@ body {
 }
 
 .episodes .list:hover {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .episodes .list .heading {

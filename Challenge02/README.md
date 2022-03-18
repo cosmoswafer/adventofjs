@@ -22,13 +22,13 @@
 
 Used concepts:
 
-* Grid layout 
-  * Sometimes could replace flex layout
-* Flex layout to quickly center image and text
-* Absolution position to place image with offset
-* The calc function to compute values 
+- Grid layout
+  - Sometimes could replace flex layout
+- Flex layout to quickly center image and text
+- Absolution position to place image with offset
+- The calc function to compute values
 
-Most of the elements were using grid layout. 
+Most of the elements were using grid layout.
 When trying to center different elemnets, e.g. images and text, flex layout is the easier wayt.
 If we want to vertically center text, using line height is the easiest method.
 
@@ -42,7 +42,7 @@ I used the Mediator design patter here.
 When updating cart items, they will notify the parent cart object to update subtotal.
 Similar behaviour in the menu items as well.
 
-### Improvements 
+### Improvements
 
 We could add another class to control both Cart and Menu.
 When user click the buttons, e.g. Adding items into cart or Removing items from cart,

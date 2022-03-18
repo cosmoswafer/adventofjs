@@ -9,30 +9,29 @@
   </head>
   <body>
     <div id="app">
-<div class="ring">
-    <svg height="518" width="518">
-        <circle cx="259" cy="259" r="254" stroke-width="10" fill="none" />
-    </svg>
-</div>
-<div class="timer">
-    <div class="time">
-        <div class="minutes">
-            <input type="text" name="minutes" value="45" disabled >
+      <div class="ring">
+        <svg height="518" width="518">
+          <circle cx="259" cy="259" r="254" stroke-width="10" fill="none" />
+        </svg>
+      </div>
+      <div class="timer">
+        <div class="time">
+          <div class="minutes">
+            <input type="text" name="minutes" value="45" disabled />
+          </div>
+          <div class="colon">:</div>
+          <div class="seconds">
+            <input type="text" name="seconds" value="00" disabled />
+          </div>
         </div>
-        <div class="colon">:</div>
-        <div class="seconds">
-            <input type="text" name="seconds" value="00" disabled >
-        </div>
-    </div>
-    <button class="start">START</button>
-    <button class="pause hide">PAUSE</button>
-    <button class="settings">
-        <img class="gear" src="./images/gear.svg" >
-        <img class="check hide" src="./images/check.svg" >
+        <button class="start">START</button>
+        <button class="pause hide">PAUSE</button>
+        <button class="settings">
+          <img class="gear" src="./images/gear.svg" />
+          <img class="check hide" src="./images/check.svg" />
         </button>
-</div>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
-
