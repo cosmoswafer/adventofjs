@@ -4,10 +4,10 @@
     --font-family: 'Source Sans Pro', sans-serif;
     /*Colours*/
     --bkg: #262529;
-    --dollar: #FFC700;
-    --range-thumb: #EA346F;
+    --dollar: #ffc700;
+    --range-thumb: #ea346f;
     --range-th-rgba: rgba(234, 52, 111, 0.2);
-    --range-slider: #4D4C53;
+    --range-slider: #4d4c53;
     --buy-btn: #333139;
     /*Dimensions*/
     --app-height: 577px;
@@ -53,7 +53,7 @@ body {
     font-weight: 900;
 }
 
-input[type="range"] {
+input[type='range'] {
     -webkit-appearance: none;
     appearance: none;
     background: var(--range-slider);
@@ -64,14 +64,14 @@ input[type="range"] {
     width: var(--slider-width);
 }
 
-input[type="range"]::-moz-range-progress {
+input[type='range']::-moz-range-progress {
     background: var(--range-thumb);
     border-radius: 10px 0 0 10px;
     box-shadow: 0px 2px 25px var(--range-thumb);
     height: var(--slider-height);
 }
 
-input[type="range"]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
     -webkit-appearance: none;
     appearance: none;
     background: var(--range-thumb);
@@ -83,7 +83,7 @@ input[type="range"]::-moz-range-thumb {
     width: var(--knob-size);
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     background: var(--range-thumb);
