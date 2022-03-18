@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --font-inter: 'Inter', sans-serif;
+    --font-robot: 'Roboto Mono', monospace;;
+    /* Colours */
+    --bkg-main: #F6F6F3;
+    --bkg-bottom: #F7F7F7;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
