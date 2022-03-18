@@ -1,4 +1,4 @@
-# Day 6 - Computer Keyboard
+# Day 6 - Range Slider
 
 ![Advent of JavaScript](screen.gif)
 
