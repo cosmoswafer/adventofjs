@@ -1,3 +1,5 @@
+import { Weather } from './weather.js';
+
 const daysOfWeekMap = {
     0: 'SUN',
     1: 'MON',
@@ -17,4 +19,10 @@ const iconNameToSizeMap = {
     rainy: { width: 160, height: 222 },
 };
 
-export class App {}
+export class App {
+    constructor() {
+        const w = new Weather();
+
+        w.downloadData();
+    }
+}
