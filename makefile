@@ -19,7 +19,7 @@ $(targets): $(OUTDIR)/%/index.html: %/$(DIST)
 	@echo "Output target: $@ prereq: $^"
 	$(eval $@_tg := $(@:%/index.html=%))
 	@echo Target directory: $($@_tg)
-	cp -av $< $($@_tg)
+	cp -rv $< $($@_tg)
 
 clean:
 	rm -rvf $(inter_dist)
