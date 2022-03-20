@@ -1,15 +1,5 @@
 import { Weather } from './weather.js';
 
-const daysOfWeekMap = {
-    0: 'SUN',
-    1: 'MON',
-    2: 'TUES',
-    3: 'WED',
-    4: 'THUR',
-    5: 'FRI',
-    6: 'SAT',
-};
-
 const iconNameToSizeMap = {
     cloudy: { width: 264, height: 166 },
     sunny: { width: 208, height: 213 },
@@ -20,9 +10,19 @@ const iconNameToSizeMap = {
 };
 
 export class App {
-    constructor() {
-        const w = new Weather();
+    app_div = document.querySelector('#app');
 
-        w.downloadData();
+    weather = new Weather();
+
+    constructor() {
+        this.mainAsync();
     }
+
+    async mainAsync() {
+        await this.weather.downloadData();
+
+        this.app_div.append(this.weather.render());
+    }
+
+    render() {}
 }

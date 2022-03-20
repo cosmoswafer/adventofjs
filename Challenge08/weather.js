@@ -1,4 +1,5 @@
 import { api_key } from './key.js';
+import { daysOfWeekMap } from './conf.js';
 import { GeoLocation } from './geolocation.js';
 
 export class Weather {
@@ -6,10 +7,12 @@ export class Weather {
     //static owm_api = `api.openweathermap.org/data/2.5/forecast/daily?lat=${}&lon=${}&cnt=${Weather.days}&appid=${api_key}`;
     static owm_api = `https://api.openweathermap.org/data/2.5/onecall`;
 
+    dom_element = document.createElement('ol');
+
     forecasts = new Array();
 
     async downloadData() {
-        await this._tryFetch();
+        await this._fetchData();
 
         for (let i of this.forecasts) {
             console.log(i);
@@ -36,11 +39,12 @@ export class Weather {
         return url;
     }
 
-    async _tryFetch() {
+    async _fetchData() {
         const g = await this._getLocation();
         const url = this._owmUrl(g);
 
-        const response = await fetch(url);
+        //const response = await fetch(url);
+        const response = await fetch('data.js');
 
         if (response.ok) {
             const r = await response.json();
@@ -58,9 +62,25 @@ export class Weather {
             this.forecasts.push(new WeatherData(weather));
         }
     }
+
+    _refreshDom() {
+        this.dom_element.textContent = '';
+    }
+
+    render() {
+        this._refreshDom();
+
+        for (let i of this.forecasts) {
+            this.dom_element.append(i.render());
+        }
+
+        return this.dom_element;
+    }
 }
 
 class WeatherData {
+    dom_element = document.createElement('li');
+
     date;
     weather;
     tempeature;
@@ -68,10 +88,25 @@ class WeatherData {
     tempeature_feel;
 
     constructor(data) {
-        this.date = data.dt;
+        this.date = new Date(Number(data.dt) * 1000);
         this.weather = data.weather[0].main;
         this.tempeature = data.temp.day;
-        this.precipitation = data.pop;
+        this.precipitation = Number(data.pop) * 100;
         this.tempeature_feel = data.feels_like.day;
+    }
+
+    render() {
+        this.dom_element.innerHTML = `
+<div class="week">${daysOfWeekMap[this.date.getDay()]}</div>
+<div class="date">${this.date.getDate()}</div>
+<div class="weather">
+<img class="icon" src="./images/cloudy.svg">
+<p class="tempeature">${this.tempeature}</p>
+<div class="precipitation"><img src="./images/precipitation.svg"><span>${this.precipitation}</span></div>
+<div class="temp-feel"><img src="./images/low.svg"><span>${this.tempeature_feel}</span></div>
+</div>
+        `;
+
+        return this.dom_element;
     }
 }
