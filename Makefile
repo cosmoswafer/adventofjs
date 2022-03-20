@@ -24,5 +24,5 @@ $(targets): $(OUTDIR)/%/index.html: %/$(DIST)
 clean-dist:
 	rm -rvf $(inter_dist)
 
-clean:
+clean: clean-dist
 	rm -rvf $(targets:%/index.html=%)
