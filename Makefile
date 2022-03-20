@@ -21,6 +21,8 @@ $(targets): $(OUTDIR)/%/index.html: %/$(DIST)
 	@echo Target directory: $($@_tg)
 	cp -rv $< $($@_tg)
 
-clean:
+clean-dist:
 	rm -rvf $(inter_dist)
+
+clean:
 	rm -rvf $(targets:%/index.html=%)
