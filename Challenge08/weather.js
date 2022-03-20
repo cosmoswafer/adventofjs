@@ -11,6 +11,10 @@ export class Weather {
 
     forecasts = new Array();
 
+    constructor() {
+        this.dom_element.classList.add('forecasts');
+    }
+
     async downloadData() {
         await this._fetchData();
 
@@ -100,10 +104,16 @@ class WeatherData {
 <div class="week">${daysOfWeekMap[this.date.getDay()]}</div>
 <div class="date">${this.date.getDate()}</div>
 <div class="weather">
-<img class="icon" src="./images/cloudy.svg">
-<p class="tempeature">${this.tempeature}</p>
-<div class="precipitation"><img src="./images/precipitation.svg"><span>${this.precipitation}</span></div>
-<div class="temp-feel"><img src="./images/low.svg"><span>${this.tempeature_feel}</span></div>
+<div class="icon"></div>
+<div class="tempeature"><p>${this.tempeature.toFixed(
+            0
+        )}</p><div class="ellipse"></div></div>
+<div class="precipitation"><img src="./images/precipitation.svg"><span>${
+            this.precipitation
+        }%</span></div>
+<div class="temp-feel"><img src="./images/low.svg"><span>${
+            this.tempeature_feel
+        }°</span></div>
 </div>
         `;
 
