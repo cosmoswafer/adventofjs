@@ -103,7 +103,7 @@ class WeatherData {
         this.dom_element.innerHTML = `
 <div class="week">${daysOfWeekMap[this.date.getDay()]}</div>
 <div class="date">${this.date.getDate()}</div>
-<div class="weather">
+<div class="weather ${this.weather}">
 <div class="icon"></div>
 <div class="tempeature"><p>${this.tempeature.toFixed(
             0
