@@ -48,7 +48,7 @@ export class Weather {
         const url = this._owmUrl(g);
 
         //const response = await fetch(url);
-        const response = await fetch('data.js');
+        const response = await fetch('data.json');
 
         if (response.ok) {
             const r = await response.json();
