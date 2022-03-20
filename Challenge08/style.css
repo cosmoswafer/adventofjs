@@ -94,8 +94,10 @@ ol.forecasts .weather {
 .weather .precipitation,
 .weather .temp-feel {
     align-items: center;
-    display: flex;
+    display: grid;
     font-family: var(--main-font);
     font-size: 1rem;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    width: 50%;
 }

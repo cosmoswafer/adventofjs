@@ -26,10 +26,8 @@
             }
         ]
     },
-    "minutely": [
-    ],
-    "hourly": [
-    ],
+    "minutely": [],
+    "hourly": [],
     "daily": [
         {
             "dt": 1647835200,

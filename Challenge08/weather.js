@@ -111,9 +111,9 @@ class WeatherData {
 <div class="precipitation"><img src="./images/precipitation.svg"><span>${
             this.precipitation
         }%</span></div>
-<div class="temp-feel"><img src="./images/low.svg"><span>${
-            this.tempeature_feel
-        }°</span></div>
+<div class="temp-feel"><img src="./images/low.svg"><span>${this.tempeature_feel.toFixed(
+            0
+        )}°</span></div>
 </div>
         `;
 
