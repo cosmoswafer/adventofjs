@@ -35,12 +35,7 @@ body {
 
 .cloudy-text {
     color: #d3ebf4;
-}
-
-.cloudy-text svg {
     fill: #d3ebf4;
-    height: 32px;
-    width: 32px;
 }
 
 ol.forecasts {
@@ -118,4 +113,10 @@ ol.forecasts .weather {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     width: 50%;
+}
+
+.precipitation svg,
+.temp-feel svg {
+    height: 32px;
+    width: 32px;
 }

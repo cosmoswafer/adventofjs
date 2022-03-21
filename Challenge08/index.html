@@ -8,7 +8,37 @@
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <ol>
+                <li class="template">
+                    <div class="week"></div>
+                    <div class="date"></div>
+                    <div class="weather cloudy-back">
+                        <div class="icon"></div>
+                        <div class="tempeature cloudy-temp">
+                            <p></p>
+                            <div class="ellipse"></div>
+                        </div>
+                        <div class="precipitation cloudy-text">
+                            <svg
+                                viewBox="0 0 32 32"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <use href="#preci-svg" /></svg
+                            ><span></span>
+                        </div>
+                        <div class="temp-feel cloudy-text">
+                            <svg
+                                viewBox="0 0 32 32"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <use href="#low-svg" /></svg
+                            ><span>°</span>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
         <script type="module" src="/main.js"></script>
 
         <div class="svg-images" style="display: none">
