@@ -1,6 +1,7 @@
 import { api_key } from './key.js';
 import { daysOfWeekMap } from './conf.js';
 import { GeoLocation } from './geolocation.js';
+import { SVG } from './svg.js';
 
 export class Weather {
     static days = 7;
@@ -99,21 +100,29 @@ class WeatherData {
     }
 
     render() {
+        const svg_low = new SVG('low-svg');
+        const svg_preci = new SVG('preci-svg');
+
         this.dom_element.innerHTML = `
-<div class="week">${daysOfWeekMap[this.date.getDay()]}</div>
-<div class="date">${this.date.getDate()}</div>
-<div class="weather ${this.weather} cloudy-back">
-<div class="icon"></div>
-<div class="tempeature cloudy-temp"><p>${this.tempeature.toFixed(
-            0
-        )}</p><div class="ellipse"></div></div>
-<div class="precipitation cloudy-text"><img src="./images/precipitation.svg"><span>${
-            this.precipitation
-        }%</span></div>
-<div class="temp-feel cloudy-text"><img src="./images/low.svg"><span>${this.tempeature_feel.toFixed(
-            0
-        )}°</span></div>
-</div>
+            <div class="week">${daysOfWeekMap[this.date.getDay()]}</div>
+            <div class="date">${this.date.getDate()}</div>
+            <div class="weather ${this.weather} cloudy-back">
+                <div class="icon"></div>
+                <div class="tempeature cloudy-temp">
+                    <p>${this.tempeature.toFixed(0)}</p>
+                    <div class="ellipse"></div>
+                </div>
+                <div class="precipitation cloudy-text">
+                    ${svg_preci.sources}<span
+                        >${this.precipitation}%</span
+                    >
+                </div>
+                <div class="temp-feel cloudy-text">
+                    ${svg_low.sources}<span
+                        >${this.tempeature_feel.toFixed(0)}°</span
+                    >
+                </div>
+            </div>
         `;
 
         return this.dom_element;

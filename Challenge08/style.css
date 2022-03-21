@@ -37,6 +37,12 @@ body {
     color: #d3ebf4;
 }
 
+.cloudy-text svg {
+    fill: #d3ebf4;
+    height: 32px;
+    width: 32px;
+}
+
 ol.forecasts {
     align-items: center;
     display: flex;
