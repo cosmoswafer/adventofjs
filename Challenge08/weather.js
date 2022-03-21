@@ -4,7 +4,6 @@ import { GeoLocation } from './geolocation.js';
 
 export class Weather {
     static days = 7;
-    //static owm_api = `api.openweathermap.org/data/2.5/forecast/daily?lat=${}&lon=${}&cnt=${Weather.days}&appid=${api_key}`;
     static owm_api = `https://api.openweathermap.org/data/2.5/onecall`;
 
     dom_element = document.createElement('ol');
@@ -103,15 +102,15 @@ class WeatherData {
         this.dom_element.innerHTML = `
 <div class="week">${daysOfWeekMap[this.date.getDay()]}</div>
 <div class="date">${this.date.getDate()}</div>
-<div class="weather ${this.weather}">
+<div class="weather ${this.weather} cloudy-back">
 <div class="icon"></div>
-<div class="tempeature"><p>${this.tempeature.toFixed(
+<div class="tempeature cloudy-temp"><p>${this.tempeature.toFixed(
             0
         )}</p><div class="ellipse"></div></div>
-<div class="precipitation"><img src="./images/precipitation.svg"><span>${
+<div class="precipitation cloudy-text"><img src="./images/precipitation.svg"><span>${
             this.precipitation
         }%</span></div>
-<div class="temp-feel"><img src="./images/low.svg"><span>${this.tempeature_feel.toFixed(
+<div class="temp-feel cloudy-text"><img src="./images/low.svg"><span>${this.tempeature_feel.toFixed(
             0
         )}°</span></div>
 </div>
