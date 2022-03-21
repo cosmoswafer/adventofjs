@@ -1,8 +1,7 @@
 import { api_key } from './key.js';
 import { daysOfWeekMap } from './conf.js';
-import { GeoLocation } from './geolocation.js';
-import { DOM } from './dom.js';
-import { SVG } from './svg.js';
+import { GeoLocation } from './util/geolocation.js';
+import { DOM } from './util/dom.js';
 
 export class Weather {
     static days = 7;
