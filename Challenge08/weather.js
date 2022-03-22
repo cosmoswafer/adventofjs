@@ -17,10 +17,6 @@ export class Weather {
 
     async downloadData() {
         await this._fetchData();
-
-        for (let i of this.forecasts) {
-            console.log(i);
-        }
     }
 
     async _getLocation() {
@@ -52,7 +48,6 @@ export class Weather {
 
         if (response.ok) {
             const r = await response.json();
-            console.log({ response: r });
             this._parseWeather(r);
         } else {
             console.log('HTTP-Error: ' + response.status);
@@ -72,8 +67,6 @@ export class Weather {
     }
 
     render() {
-        this._refreshDom();
-
         for (let i of this.forecasts) {
             this.dom_element.append(i.render());
         }
@@ -106,13 +99,13 @@ class WeatherData {
         const node = new DOM(this.dom_element);
 
         node.q('.weather').classList.add(this.weather);
-        node.q('.week').textContent = daysOfWeekMap[this.date.getDay()];
-        node.q('.date').textContent = this.date.getDate();
-        node.q('.tempeature p').textContent = this.tempeature.toFixed(0);
-        node.q('.precipitation span').textContent =
-            this.precipitation.toFixed(0) + '%';
-        node.q('.temp-feel span').textContent =
-            this.tempeature_feel.toFixed(0) + '°';
+        node.dotText([
+            ['.week', daysOfWeekMap[this.date.getDay()]],
+            ['.date', this.date.getDate()],
+            ['.tempeature p', this.tempeature.toFixed(0)],
+            ['.precipitation span', this.precipitation.toFixed(0) + '%'],
+            ['.temp-feel span', this.tempeature_feel.toFixed(0) + '°'],
+        ]);
 
         return this.dom_element;
     }

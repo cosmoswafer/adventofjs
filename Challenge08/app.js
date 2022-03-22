@@ -15,7 +15,15 @@ export class App {
     weather = new Weather();
 
     constructor() {
+        this._hideTemplates();
         this.mainAsync();
+    }
+
+    _hideTemplates() {
+        const templates = document.querySelectorAll('.template');
+        for (let template of templates) {
+            template.style.display = 'none';
+        }
     }
 
     async mainAsync() {
