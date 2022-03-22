@@ -38,6 +38,71 @@ body {
     fill: #d3ebf4;
 }
 
+.sunny.weather {
+    background: #e6df95;
+}
+
+.sunny.weather .tempeature {
+    color: #4db0d3;
+}
+
+.sunny.weather .infotext {
+    color: #247490;
+    fill: #247490;
+}
+
+.stormy.weather {
+    background: #0e2e3a;
+}
+
+.stormy.weather .tempeature {
+    color: #e6df95;
+}
+
+.stormy.weather .infotext {
+    color: #d3ebf4;
+    fill: #d3ebf4;
+}
+
+.snowy.weather {
+    background: #bce1ef;
+}
+
+.snowy.weather .tempeature {
+    color: #0e2e3a;
+}
+
+.snowy.weather .infotext {
+    color: #247490;
+    fill: #247490;
+}
+
+.rainy.weather {
+    background: #4db0d3;
+}
+
+.rainy.weather .tempeature {
+    color: #e6df95;
+}
+
+.rainy.weather .infotext {
+    color: #d3ebf4;
+    fill: #d3ebf4;
+}
+
+.partly-cloudy.weather {
+    background: #2b8bad;
+}
+
+.partly-cloudy.weather .tempeature {
+    color: #e6df95;
+}
+
+.partly-cloudy.weather .infotext {
+    color: #d3ebf4;
+    fill: #d3ebf4;
+}
+
 ol.forecasts {
     align-items: center;
     display: flex;

@@ -1,23 +1,35 @@
 export class DOM {
-    dom_element = null;
+    element = null;
     style = null;
     classList = null;
 
-    constructor(node) {
-        this.dom_element = node;
-        this.style = node.style;
-        this.classList = node.classList;
+    constructor(selector) {
+        const template_element = document.querySelector(selector);
+        this.element = template_element.cloneNode(true);
+
+        this._styleShorthand();
+        this._cleanUp();
+    }
+
+    _styleShorthand() {
+        this.style = this.element.style;
+        this.classList = this.element.classList;
+    }
+
+    _cleanUp() {
+        //Remove the template class from template element
+        this.classList.remove('template');
 
         //By default removing the in-line display style which was set by the template
         this.style.display = '';
     }
 
     q(selector) {
-        return this?.dom_element.querySelector(selector);
+        return this.element.querySelector(selector);
     }
 
     _setTextContent(target, value) {
-        const target_node = this?.dom_element.querySelector(target);
+        const target_node = this.element.querySelector(target);
         if (target_node != null) target_node.textContent = value;
     }
 

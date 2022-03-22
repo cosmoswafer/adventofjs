@@ -1,5 +1,5 @@
 import { api_key } from './key.js';
-import { daysOfWeekMap } from './conf.js';
+import { daysOfWeekMap, WeatherCondt } from './conf.js';
 import { GeoLocation } from './util/geolocation.js';
 import { DOM } from './util/lazydom.js';
 
@@ -76,8 +76,7 @@ export class Weather {
 }
 
 class WeatherData {
-    dom_template = document.querySelector('#app ol li.template');
-    dom_element = this.dom_template.cloneNode(true);
+    node = new DOM('#app ol li.template');
 
     date;
     weather;
@@ -91,15 +90,13 @@ class WeatherData {
         this.tempeature = data.temp.day;
         this.precipitation = data.pop * 100;
         this.tempeature_feel = data.feels_like.day;
-
-        this.dom_element.classList.remove('template');
     }
 
     render() {
-        const node = new DOM(this.dom_element);
+        const wcode = WeatherCondt.owmMap(this.weather);
 
-        node.q('.weather').classList.add(this.weather);
-        node.dotText([
+        this.node.q('.weather').classList.add(wcode.name);
+        this.node.dotText([
             ['.week', daysOfWeekMap[this.date.getDay()]],
             ['.date', this.date.getDate()],
             ['.tempeature p', this.tempeature.toFixed(0)],
@@ -107,6 +104,6 @@ class WeatherData {
             ['.temp-feel span', this.tempeature_feel.toFixed(0) + '°'],
         ]);
 
-        return this.dom_element;
+        return this.node.element;
     }
 }

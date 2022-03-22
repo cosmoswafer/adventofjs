@@ -29,15 +29,7 @@ export class WeatherCondt {
         this.name = name;
     }
 
-    owaMap(condt_code) {
-        /*
-        "main": "Drizzle",
-        "main": "Clear",
-        "main": "Thunderstorm",
-        "main": "Snow",
-        "main": "Clouds",
-        "main": "Rain",
-        */
+    static owmMap(condt_code) {
         if (condt_code === 'Drizzle') return WeatherCondt.Cloudy;
         if (condt_code === 'Clear') return WeatherCondt.Sunny;
         if (condt_code === 'Thunderstorm') return WeatherCondt.Stormy;
