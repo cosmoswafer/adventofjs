@@ -35,6 +35,7 @@ body {
 
 .cloudy-text {
     color: #d3ebf4;
+    fill: #d3ebf4;
 }
 
 .sunny-back {
@@ -124,4 +125,10 @@ ol.forecasts .weather {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     width: 50%;
+}
+
+.precipitation svg,
+.temp-feel svg {
+    height: 32px;
+    width: 32px;
 }
