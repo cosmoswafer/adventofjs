@@ -97,6 +97,8 @@ class WeatherData {
         if (! size) return;
 
         svg.setAttribute('viewBox', `0 0 ${size.width} ${size.height}`);
+        svg.setAttribute('width', size.width);
+        svg.setAttribute('height', size.height);
         svg.querySelector('use').setAttribute('href', `#${wcode}-svg`);
     }
 
