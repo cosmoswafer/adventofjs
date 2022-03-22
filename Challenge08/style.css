@@ -37,6 +37,18 @@ body {
     color: #d3ebf4;
 }
 
+.sunny-back {
+    background: #4db0d3;
+}
+
+.sunny-temp {
+    color: #e6df95;
+}
+
+.sunny-text {
+    color: #d3ebf4;
+}
+
 ol.forecasts {
     align-items: center;
     display: flex;
