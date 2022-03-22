@@ -25,17 +25,20 @@ export class WeatherCondt {
     static PartlyCloudy = new WeatherCondt('partly-cloudy');
     static Rainy = new WeatherCondt('rainy');
 
+    static owm_map = {
+        Drizzle : WeatherCondt.Cloudy,
+        Clear : WeatherCondt.Sunny,
+        Thunderstorm : WeatherCondt.Stormy,
+        Snow : WeatherCondt.Snowy,
+        Clouds : WeatherCondt.PartlyCloudy,
+        Rain : WeatherCondt.Rainy,
+    };
+
     constructor(name) {
         this.name = name;
     }
 
-    static owmMap(condt_code) {
-        if (condt_code === 'Drizzle') return WeatherCondt.Cloudy;
-        if (condt_code === 'Clear') return WeatherCondt.Sunny;
-        if (condt_code === 'Thunderstorm') return WeatherCondt.Stormy;
-        if (condt_code === 'Snow') return WeatherCondt.Snowy;
-        if (condt_code === 'Clouds') return WeatherCondt.PartlyCloudy;
-        if (condt_code === 'Rain') return WeatherCondt.Rainy;
-        else return WeatherCondt.Cloudy;
+    static mapName(condt_code) {
+        return WeatherCondt.owm_map[condt_code]?.name ?? WeatherCondt.Cloudy.name;
     }
 }

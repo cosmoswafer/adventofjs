@@ -25,82 +25,56 @@ body {
 #app {
 }
 
-.cloudy.weather {
-    background: #4db0d3;
+.cloudy {
+    --background: #4db0d3;
+    --tempeature: #e6df95;
+    --content: #d3ebf4;
 }
 
-.cloudy.weather .tempeature {
-    color: #e6df95;
+.sunny {
+    --background: #e6df95;
+    --tempeature: #4db0d3;
+    --content: #247490;
 }
 
-.cloudy.weather .infotext {
-    color: #d3ebf4;
-    fill: #d3ebf4;
+.stormy {
+    --background: #0e2e3a;
+    --tempeature: #e6df95;
+    --content: #d3ebf4;
 }
 
-.sunny.weather {
-    background: #e6df95;
+.snowy {
+    --background: #bce1ef;
+    --tempeature: #0e2e3a;
+    --content: #247490;
 }
 
-.sunny.weather .tempeature {
-    color: #4db0d3;
+.rainy {
+    --background: #4db0d3;
+    --tempeature: #e6df95;
+    --content: #d3ebf4;
 }
 
-.sunny.weather .infotext {
-    color: #247490;
-    fill: #247490;
+.partly-cloudy {
+    --background: #2b8bad;
+    --tempeature: #e6df95;
+    --content: #d3ebf4;
 }
 
-.stormy.weather {
-    background: #0e2e3a;
+.weather {
+    background: var(--background);
 }
 
-.stormy.weather .tempeature {
-    color: #e6df95;
+.weather .tempeature {
+    color: var(--tempeature);
 }
 
-.stormy.weather .infotext {
-    color: #d3ebf4;
-    fill: #d3ebf4;
+.weather .infotext {
+    color: var(--content);
 }
 
-.snowy.weather {
-    background: #bce1ef;
-}
-
-.snowy.weather .tempeature {
-    color: #0e2e3a;
-}
-
-.snowy.weather .infotext {
-    color: #247490;
-    fill: #247490;
-}
-
-.rainy.weather {
-    background: #4db0d3;
-}
-
-.rainy.weather .tempeature {
-    color: #e6df95;
-}
-
-.rainy.weather .infotext {
-    color: #d3ebf4;
-    fill: #d3ebf4;
-}
-
-.partly-cloudy.weather {
-    background: #2b8bad;
-}
-
-.partly-cloudy.weather .tempeature {
-    color: #e6df95;
-}
-
-.partly-cloudy.weather .infotext {
-    color: #d3ebf4;
-    fill: #d3ebf4;
+.weather .infotext svg {
+    fill: var(--content);
 }
 
 ol.forecasts {
@@ -144,8 +118,8 @@ ol.forecasts .weather {
     min-width: 165px;
 }
 
-.weather div.icon {
-    background: url(/images/cloudy.svg) no-repeat 0 0/100%;
+.weather img.icon {
+    background: transparent;
     height: 150px;
     width: 150px;
 }

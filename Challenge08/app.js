@@ -7,7 +7,7 @@ export class App {
 
     constructor() {
         this._hideTemplates();
-        this.mainAsync();
+        this.render();
     }
 
     _hideTemplates() {
@@ -17,11 +17,9 @@ export class App {
         }
     }
 
-    async mainAsync() {
+    async render() {
         await this.weather.downloadData();
 
         this.app_div.append(this.weather.render());
     }
-
-    render() {}
 }

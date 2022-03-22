@@ -1,5 +1,5 @@
 import { api_key } from './key.js';
-import { daysOfWeekMap, WeatherCondt } from './conf.js';
+import { daysOfWeekMap, iconNameToSizeMap, WeatherCondt } from './conf.js';
 import { GeoLocation } from './util/geolocation.js';
 import { DOM } from './util/lazydom.js';
 
@@ -92,10 +92,19 @@ class WeatherData {
         this.tempeature_feel = data.feels_like.day;
     }
 
-    render() {
-        const wcode = WeatherCondt.owmMap(this.weather);
+    _applyIcon(svg, wcode) {
+        const size = iconNameToSizeMap[wcode] ?? false;
+        if (! size) return;
 
-        this.node.q('.weather').classList.add(wcode.name);
+        svg.setAttribute('viewBox', `0 0 ${size.width} ${size.height}`);
+        svg.querySelector('use').setAttribute('href', `#${wcode}-svg`);
+    }
+
+    render() {
+        const wcode = WeatherCondt.mapName(this.weather);
+
+        this.node.q('.weather').classList.add(wcode);
+        this._applyIcon(this.node.q('svg.icon'), wcode);
         this.node.dotText([
             ['.week', daysOfWeekMap[this.date.getDay()]],
             ['.date', this.date.getDate()],
