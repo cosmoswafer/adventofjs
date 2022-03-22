@@ -13,6 +13,10 @@ export class DOM {
         return this?.dom_element.querySelectorAll(`.${name}`);
     }
 
+    q(selector) {
+        return this?.dom_element.querySelector(selector);
+    }
+
     dot(key) {
         return this._firstByClass(key);
     }

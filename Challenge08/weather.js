@@ -1,7 +1,7 @@
 import { api_key } from './key.js';
 import { daysOfWeekMap } from './conf.js';
 import { GeoLocation } from './util/geolocation.js';
-import { DOM } from './util/dom.js';
+import { DOM } from './util/lazydom.js';
 
 export class Weather {
     static days = 7;
@@ -99,48 +99,20 @@ class WeatherData {
         this.precipitation = data.pop * 100;
         this.tempeature_feel = data.feels_like.day;
 
-        const node = new DOM(this.dom_element);
-        node.dot('weather').classList.add(this.weather);
-        node.dot('week').textContent = daysOfWeekMap[this.date.getDay()];
-        node.dot('date').textContent = this.date.getDate();
-        node.dot('template p').textContent = this.tempeature.toFixed(0);
-        node.dot('precipitation span').textContent =
-            this.precipitation.toFixed(0);
-        node.dot('temp-feel span').textContent =
-            this.tempeature_feel.toFixed(0) + '°';
-
         this.dom_element.classList.remove('template');
     }
 
     render() {
-        return this.dom_element;
-    }
+        const node = new DOM(this.dom_element);
 
-    render02() {
-        const svg_low = new SVG('low-svg');
-        const svg_preci = new SVG('preci-svg');
-
-        this.dom_element.innerHTML = `
-            <div class="week">${daysOfWeekMap[this.date.getDay()]}</div>
-            <div class="date">${this.date.getDate()}</div>
-            <div class="weather ${this.weather} cloudy-back">
-                <div class="icon"></div>
-                <div class="tempeature cloudy-temp">
-                    <p>${this.tempeature.toFixed(0)}</p>
-                    <div class="ellipse"></div>
-                </div>
-                <div class="precipitation cloudy-text">
-                    ${svg_preci.sources}<span
-                        >${this.precipitation.toFixed(0)}%</span
-                    >
-                </div>
-                <div class="temp-feel cloudy-text">
-                    ${svg_low.sources}<span
-                        >${this.tempeature_feel.toFixed(0)}°</span
-                    >
-                </div>
-            </div>
-        `;
+        node.q('.weather').classList.add(this.weather);
+        node.q('.week').textContent = daysOfWeekMap[this.date.getDay()];
+        node.q('.date').textContent = this.date.getDate();
+        node.q('.tempeature p').textContent = this.tempeature.toFixed(0);
+        node.q('.precipitation span').textContent =
+            this.precipitation.toFixed(0) + '%';
+        node.q('.temp-feel span').textContent =
+            this.tempeature_feel.toFixed(0) + '°';
 
         return this.dom_element;
     }

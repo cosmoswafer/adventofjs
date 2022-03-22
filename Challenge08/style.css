@@ -25,29 +25,17 @@ body {
 #app {
 }
 
-.cloudy-back {
+.cloudy.weather {
     background: #4db0d3;
 }
 
-.cloudy-temp {
+.cloudy.weather .tempeature {
     color: #e6df95;
 }
 
-.cloudy-text {
+.cloudy.weather .infotext {
     color: #d3ebf4;
     fill: #d3ebf4;
-}
-
-.sunny-back {
-    background: #4db0d3;
-}
-
-.sunny-temp {
-    color: #e6df95;
-}
-
-.sunny-text {
-    color: #d3ebf4;
 }
 
 ol.forecasts {
