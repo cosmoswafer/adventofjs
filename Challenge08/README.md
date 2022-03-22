@@ -19,10 +19,11 @@ we can use the use element from SVG, to refer the existing SVG path.
 
 Using img tag to display svg will not display the drop shadow correctly.
 Another issue is if we put the svg in a hidden div, their colours will be affected.
-Thus we should wrap all svg images within a symbol tag, 
+Thus we should wrap all svg images within a symbol tag,
 and use the use element to refer them by id.
 symbol element will not be display on the screen.
 
 ### JavaScript
 
 The first time we need to use fetch API in this challenges.
+I added additional logic to get the API key from search parameters.

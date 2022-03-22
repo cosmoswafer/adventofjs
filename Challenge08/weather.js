@@ -43,8 +43,7 @@ export class Weather {
         const g = await this._getLocation();
         const url = this._owmUrl(g);
 
-        //const response = await fetch(url);
-        const response = await fetch('data.json');
+        const response = await fetch(url);
 
         if (response.ok) {
             const r = await response.json();
@@ -94,7 +93,7 @@ class WeatherData {
 
     _applyIcon(svg, wcode) {
         const size = iconNameToSizeMap[wcode] ?? false;
-        if (! size) return;
+        if (!size) return;
 
         svg.setAttribute('viewBox', `0 0 ${size.width} ${size.height}`);
         svg.setAttribute('width', size.width);

@@ -22,43 +22,63 @@ body {
     width: 100vw;
 }
 
+body > svg {
+    position: absolute;
+}
+
 #app {
+}
+
+#app svg.icon {
+    position: absolute;
 }
 
 .cloudy {
     --background: #4db0d3;
     --tempeature: #e6df95;
     --content: #d3ebf4;
+    --svg-top: 35px;
+    --svg-left: -35px;
 }
 
 .sunny {
     --background: #e6df95;
     --tempeature: #4db0d3;
     --content: #247490;
+    --svg-top: 0px;
+    --svg-left: -20px;
 }
 
 .stormy {
     --background: #0e2e3a;
     --tempeature: #e6df95;
     --content: #d3ebf4;
+    --svg-top: 25px;
+    --svg-left: -20px;
 }
 
 .snowy {
     --background: #bce1ef;
     --tempeature: #0e2e3a;
     --content: #247490;
+    --svg-top: 5px;
+    --svg-left: -22px;
 }
 
 .rainy {
-    --background: #4db0d3;
-    --tempeature: #e6df95;
-    --content: #d3ebf4;
-}
-
-.partly-cloudy {
     --background: #2b8bad;
     --tempeature: #e6df95;
     --content: #d3ebf4;
+    --svg-top: 25px;
+    --svg-left: 30px;
+}
+
+.partly-cloudy {
+    --background: #4db0d3;
+    --tempeature: #e6df95;
+    --content: #d3ebf4;
+    --svg-top: 10px;
+    --svg-left: -12px;
 }
 
 .weather {
@@ -75,6 +95,11 @@ body {
 
 .weather .infotext svg {
     fill: var(--content);
+}
+
+.weather svg.icon {
+    top: var(--svg-top);
+    left: var(--svg-left);
 }
 
 ol.forecasts {
@@ -114,25 +139,23 @@ ol.forecasts .weather {
         11px 4px 34px rgba(32, 77, 92, 0.7);
     display: flex;
     flex-direction: column;
+    gap: 1em;
     justify-content: center;
     min-width: 165px;
-}
-
-.weather img.icon {
-    background: transparent;
-    height: 150px;
-    width: 150px;
+    padding: 200px 0 2em 0;
+    position: relative;
 }
 
 .weather .tempeature {
     display: flex;
+    margin: 5em 0;
 }
 
 .weather .tempeature p {
     font-family: var(--temp-font);
     font-size: 6.88rem;
     line-height: 6.88rem;
-    margin: 0;
+    margin: 0 0 0 var(--ellipse-size);
 }
 
 .ellipse {
