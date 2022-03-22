@@ -6,7 +6,7 @@ targets := $(sources:%=$(OUTDIR)/%)
 
 all: $(targets)
 
-$(inter_dist): %/$(DIST): %/main.js 
+$(inter_dist): %/$(DIST): %/main.js $(wildcard *.js) %/index.html
 	@echo "Intermediate target: $@ prereq: $^"
 	$(eval $@_wd := $(@:%/$(DIST)=%))
 	@echo Working directory: $($@_wd)
@@ -19,7 +19,8 @@ $(targets): $(OUTDIR)/%/index.html: %/$(DIST)
 	@echo "Output target: $@ prereq: $^"
 	$(eval $@_tg := $(@:%/index.html=%))
 	@echo Target directory: $($@_tg)
-	cp -rv $< $($@_tg)
+	cp -av $< $($@_tg)
+	touch $@
 
 clean-dist:
 	rm -rvf $(inter_dist)
