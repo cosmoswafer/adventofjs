@@ -6,6 +6,7 @@ import { DOM } from './util/lazydom.js';
 export class Weather {
     static days = 7;
     static owm_api = `https://api.openweathermap.org/data/2.5/onecall`;
+    static data_json = `onecall.json`;
 
     dom_element = document.querySelector('#app ol');
 
@@ -41,7 +42,7 @@ export class Weather {
 
     async _fetchData() {
         const g = await this._getLocation();
-        const url = this._owmUrl(g);
+        const url = api_key ? this._owmUrl(g) : Weather.data_json;
 
         const response = await fetch(url);
 
