@@ -107,6 +107,7 @@ ol.forecasts {
     display: flex;
     gap: 25px;
     justify-content: center;
+    padding: 0;
 }
 
 ol.forecasts li {
