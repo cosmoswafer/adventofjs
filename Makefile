@@ -1,10 +1,10 @@
 OUTDIR = docs
 DIST = dist
-sources := $(wildcard Challenge??/index.html)
+sources := $(wildcard Challenge??/index.html) ChallengeIndex/index.html
 inter_dist := $(sources:%/index.html=%/$(DIST))
 targets := $(sources:%=$(OUTDIR)/%)
 
-all: $(targets)
+all: $(targets) $(OUTDIR)/index.html
 
 .SUFFIXES:
 
@@ -23,6 +23,10 @@ $(targets): $(OUTDIR)/%/index.html: %/$(DIST)
 	@echo "Output target: $@ prereq: $^"
 	@echo Target directory: $(dir $@)
 	cp -av $< $(dir $@)
+	touch $@
+
+$(OUTDIR)/index.html: $(OUTDIR)/ChallengeIndex/index.html
+	cp -av $< $@
 	touch $@
 
 clean-dist:
