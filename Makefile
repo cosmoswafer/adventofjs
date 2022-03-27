@@ -1,6 +1,6 @@
 OUTDIR = docs
 DIST = dist
-sources := $(wildcard Challenge??/index.html) ChallengeIndex/index.html
+sources := $(wildcard Challenge??/index.html) 
 inter_dist := $(sources:%/index.html=%/$(DIST))
 targets := $(sources:%=$(OUTDIR)/%)
 
@@ -25,7 +25,7 @@ $(targets): $(OUTDIR)/%/index.html: %/$(DIST)
 	cp -av $< $(dir $@)
 	touch $@
 
-$(OUTDIR)/index.html: $(OUTDIR)/ChallengeIndex/index.html
+$(OUTDIR)/index.html: $(OUTDIR)/GHPageIndex/index.html
 	cp -av $< $@
 	touch $@
 

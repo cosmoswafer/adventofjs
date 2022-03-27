@@ -4,7 +4,8 @@
     "version": "0.0.0",
     "prettier": {
         "singleQuote": true,
-        "tabWidth": 4
+        "tabWidth": 4,
+        "vueIndentScriptAndStyle": true
     },
     "scripts": {
         "dev": "vite",
