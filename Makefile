@@ -25,7 +25,7 @@ $(targets): $(OUTDIR)/%/index.html: %/$(DIST)
 	cp -av $< $(dir $@)
 	touch $@
 
-$(OUTDIR)/index.html: $(OUTDIR)/GHPageIndex/index.html
+$(OUTDIR)/index.html: GHPageIndex/index.html
 	cp -av $< $@
 	touch $@
 
