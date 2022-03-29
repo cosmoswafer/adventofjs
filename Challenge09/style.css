@@ -7,6 +7,7 @@
     /*Dimensions*/
     --featured-size: 615px;
     --thumbnails-size: 173px;
+    --thumb-border: 10px;
 }
 
 body {
@@ -51,4 +52,30 @@ ul.thumbnails li img {
     height: var(--thumbnails-size);
     object-fit: cover;
     width: var(--thumbnails-size);
+}
+
+ul.thumbnails li img.focus {
+    border: var(--thumb-border) solid var(--pink);
+    height: calc(var(--thumbnails-size) - var(--thumb-border) * 2);
+    width: calc(var(--thumbnails-size) - var(--thumb-border) * 2);
+}
+
+#app img.screenbtn.left,
+#app img.screenbtn.right {
+    background: var(--pink);
+    height: 100vh;
+    opacity: 0.3;
+    padding: 0 28px;
+    position: absolute;
+    top: 0;
+    width: 42px;
+}
+
+#app img.screenbtn.left {
+    left: 0;
+}
+
+#app img.screenbtn.right {
+    right: 0;
+    transform: scaleX(-1);
 }
