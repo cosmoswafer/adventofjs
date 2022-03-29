@@ -1,8 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+    /*Colour*/
+    --pink: #ff00c7;
+    --fonts: 'Roboto Mono', monospace;
+    /*Dimensions*/
+    --featured-size: 615px;
+    --thumbnails-size: 173px;
+}
+
+body {
+    font-family: var(--fonts);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    display: grid;
+    grid-template-areas: '.' 'img' 'cap' '.' 'thm';
+    grid-template-rows: 1fr var(--featured-size) 2rem 1fr var(--thumbnails-size) 27px;
+    height: 100%;
+    justify-items: center;
+}
+
+img.featured {
+    grid-area: img;
+    height: 100%;
+}
+
+p.caption {
+    grid-area: cap;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+ul.thumbnails {
+    display: flex;
+    flex-direction: row;
+    gap: 27px;
+    grid-area: thm;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.thumbnails li img {
+    height: var(--thumbnails-size);
+    object-fit: cover;
+    width: var(--thumbnails-size);
 }
