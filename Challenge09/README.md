@@ -18,7 +18,7 @@
 
 ### CSS
 
-Set the *object-fit* CSS rule on the thumbnails, to make it as a square.
+Set the _object-fit_ CSS rule on the thumbnails, to make it as a square.
 We use outline to draw the border on selected thumbnail, with negative offset to shift it inside of the box.
 The thumbnails are radio buttons, not links.
 Its performance is a little bit slow in Google Chrome.
