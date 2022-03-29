@@ -38,7 +38,7 @@ p.caption {
     line-height: 2rem;
 }
 
-ul.thumbnails {
+.thumbnails {
     display: flex;
     flex-direction: row;
     gap: 27px;
@@ -48,13 +48,17 @@ ul.thumbnails {
     padding: 0;
 }
 
-ul.thumbnails li img {
+.thumbnails input[type="radio"] {
+    display: none;
+}
+
+.thumbnails img {
     height: var(--thumbnails-size);
     object-fit: cover;
     width: var(--thumbnails-size);
 }
 
-ul.thumbnails li img.focus {
+.thumbnails input[type="radio"]:checked + img {
     border: var(--thumb-border) solid var(--pink);
     height: calc(var(--thumbnails-size) - var(--thumb-border) * 2);
     width: calc(var(--thumbnails-size) - var(--thumb-border) * 2);
