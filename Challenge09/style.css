@@ -48,7 +48,7 @@ p.caption {
     padding: 0;
 }
 
-.thumbnails input[type="radio"] {
+.thumbnails input[type='radio'] {
     display: none;
 }
 
@@ -58,7 +58,7 @@ p.caption {
     width: var(--thumbnails-size);
 }
 
-.thumbnails input[type="radio"]:checked + img {
+.thumbnails input[type='radio']:checked + img {
     border: var(--thumb-border) solid var(--pink);
     height: calc(var(--thumbnails-size) - var(--thumb-border) * 2);
     width: calc(var(--thumbnails-size) - var(--thumb-border) * 2);
