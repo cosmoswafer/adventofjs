@@ -1,4 +1,4 @@
-export const content = [
+export const contents = [
     {
         image: 'dave-hoefler-okUIdo6NxGo-unsplash.jpg',
         caption: 'Photo by Dave Hoefler on Unsplash',
