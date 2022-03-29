@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="./assets/favicon.17e50649.svg"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>07 - Tip Calculator || Advent of JavaScript</title>
-
-    <script type="module" crossorigin src="./assets/index.4dc1b05d.js"></script>
-    <link rel="stylesheet" href="./assets/index.2da1063a.css" />
-  </head>
-  <body>
-    <div id="app">
-      <div class="tip-amount">
-        <span class="label">Tip Amount</span
-        ><span><sup>$</sup><span class="value">4.02</span></span>
-      </div>
-      <div class="total-per-person">
-        <span class="label">Total Per Person</span
-        ><span><sup>$</sup><span class="value">12.02</span></span>
-      </div>
-      <div class="input-number">
-        <div class="bill-amount">
-          <div class="bill-amount-warp">
-            <img src="./assets/dollar.63268064.svg" /><span contenteditable
-              >102.32</span
-            >
-          </div>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="./assets/favicon.17e50649.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>07 - Tip Calculator || Advent of JavaScript</title>
+        
+      <script type="module" crossorigin src="./assets/index.4dc1b05d.js"></script>
+      <link rel="stylesheet" href="./assets/index.2da1063a.css">
+    </head>
+    <body>
+        <div id="app">
+            <div class="tip-amount">
+                <span class="label">Tip Amount</span
+                ><span><sup>$</sup><span class="value">4.02</span></span>
+            </div>
+            <div class="total-per-person">
+                <span class="label">Total Per Person</span
+                ><span><sup>$</sup><span class="value">12.02</span></span>
+            </div>
+            <div class="input-number">
+                <div class="bill-amount">
+                    <div class="bill-amount-warp">
+                        <img src="./assets/dollar.63268064.svg" /><span contenteditable
+                            >102.32</span
+                        >
+                    </div>
+                </div>
+                <div class="bill-label">Bill Amount</div>
+                <div class="people-number">
+                    <div class="people-number-warp">
+                        <img src="./assets/people.ac9e95f3.svg" /><span contenteditable
+                            >25</span
+                        >
+                    </div>
+                </div>
+                <div class="people-label">Number of People</div>
+            </div>
+            <div class="percentage">
+                <label class="radbt-a">
+                    <input type="radio" name="percentage" value="0.05" />
+                    <p>5%</p>
+                </label>
+                <label class="radbt-b">
+                    <input type="radio" name="percentage" value="0.1" />
+                    <p>10%</p>
+                </label>
+                <label class="radbt-c">
+                    <input type="radio" name="percentage" value="0.15" />
+                    <p>15%</p>
+                </label>
+                <label class="radbt-d">
+                    <input type="radio" name="percentage" value="0.2" checked />
+                    <p>20%</p>
+                </label>
+            </div>
+            <div class="calculate"><button>Calculate</button></div>
         </div>
-        <div class="bill-label">Bill Amount</div>
-        <div class="people-number">
-          <div class="people-number-warp">
-            <img src="./assets/people.ac9e95f3.svg" /><span contenteditable
-              >25</span
-            >
-          </div>
-        </div>
-        <div class="people-label">Number of People</div>
-      </div>
-      <div class="percentage">
-        <label class="radbt-a">
-          <input type="radio" name="percentage" value="0.05" />
-          <p>5%</p>
-        </label>
-        <label class="radbt-b">
-          <input type="radio" name="percentage" value="0.1" />
-          <p>10%</p>
-        </label>
-        <label class="radbt-c">
-          <input type="radio" name="percentage" value="0.15" />
-          <p>15%</p>
-        </label>
-        <label class="radbt-d">
-          <input type="radio" name="percentage" value="0.2" checked />
-          <p>20%</p>
-        </label>
-      </div>
-      <div class="calculate"><button>Calculate</button></div>
-    </div>
-  </body>
+        
+    </body>
 </html>

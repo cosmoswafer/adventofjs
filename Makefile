@@ -22,6 +22,7 @@ $(inter_dist): %/$(DIST): $$(wildcard %/*.js) %/index.html
 $(targets): $(OUTDIR)/%/index.html: %/$(DIST)
 	@echo "Output target: $@ prereq: $^"
 	@echo Target directory: $(dir $@)
+	rm -rf $(dir $@)
 	cp -av $< $(dir $@)
 	touch $@
 
