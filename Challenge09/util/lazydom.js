@@ -10,7 +10,7 @@ export class DOM {
 
     constructor(selector = `.${DOM.template_placeholder}`, parent_node = document) {
         const template_element = this.#lookup(selector, parent_node);
-        (parent_node != document) 
+        (this.#isLazy(template_element)) 
             ? this.#cloneElement(template_element, parent_node)
             : this.element = template_element;
         this.#styleShorthand();
@@ -25,8 +25,14 @@ export class DOM {
     }
 
     #styleShorthand() {
-        this.style = this.element?.style;
-        this.classList = this.element?.classList;
+        if (! this.element) return;
+
+        this.style = this.element.style;
+        this.classList = this.element.classList;
+    }
+
+    #isLazy(target) {
+        return target?.classList.contains(DOM.template_placeholder);
     }
 
     #cloneElement(template_element, parent_node) {
@@ -35,13 +41,13 @@ export class DOM {
         this.#cleanUp(template_element);
     }
 
-    #cleanUp(template_element) {
+    #cleanUp(target) {
         //Remove the duplicated class which cloned from template
-        if (this.element.classList.contains(DOM.template_placeholder)) this.element.classList.remove(DOM.template_placeholder);
+        if (this.#isLazy(this.element)) this.element.classList.remove(DOM.template_placeholder);
         //We could hide the template by default, show our element after cloned
         if (this.element.style.display === 'none') this.element.style.display = '';
         //Remove the lazy template element from dom tree to save our time
-        if (template_element?.classList.contains(DOM.template_placeholder)) template_element.remove();
+        if (this.#isLazy(target)) target.remove();
     }
 
     #lookup(selector, parent_node) {
