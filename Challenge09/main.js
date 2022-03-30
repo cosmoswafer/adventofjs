@@ -1,7 +1,7 @@
 import { DOM } from './util/lazydom.js';
 import { contents } from './data.js';
 
-class Main {
+class Main extends DOM {
     static imgdir = 'images';
 
     thumbnails = document.querySelector('#app .thumbnails');
@@ -12,6 +12,8 @@ class Main {
     idx_maximum = 65535;
 
     constructor(data) {
+        super('#app');
+
         this.contents = data;
         this.idx_maximum = this.contents.length;
 
@@ -61,7 +63,7 @@ class Main {
     render() {
         for (let i in this.contents) {
             const c = this.contents[i];
-            const img = new DOM('label.theme', this.thumbnails);
+            const img = new DOM('label.lazydom', this.thumbnails);
             img.dot([
                 ['img', '', { src: this._imgUrl(c.image), alt: c.caption }],
                 ['input', '', { value: i, change: this.updateImg }],
@@ -72,12 +74,6 @@ class Main {
             inp.caption = c.caption;
         }
 
-        this._cleanUp();
-    }
-
-    _cleanUp() {
-        this.thumbnails.querySelector('label.theme').remove();
-        //We could only focus on the first thumbnail after removed the template element.
         this.thumbnails.querySelector('input:first-child')?.click();
     }
 }
