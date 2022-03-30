@@ -75,6 +75,7 @@ body {
     border: 0;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
     font-size: inherit;
     font-weight: 900;
     line-height: 1.57rem;

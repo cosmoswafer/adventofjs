@@ -61,7 +61,7 @@ class Main extends DOM {
     }
 
     render() {
-        for (let i in this.contents) {
+        for (let i=0; i<this.contents.length; i++) {
             const c = this.contents[i];
             const img = this.thumbnails.dom('label.lazydom').dot([
                 ['img', '', { src: this.#imgUrl(c.image), alt: c.caption }],
