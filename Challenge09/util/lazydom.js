@@ -71,19 +71,21 @@ export class DOM {
         return this.element.querySelectorAll(selector);
     }
 
-    attr(target, attributes) {
-        const target_node = this.element.querySelector(target);
+    #setAttr(target_element, attributes) {
         for (let k in attributes) {
             const p = [k, attributes[k]];
             DOM.events.includes(k)
-                ? target_node.addEventListener(...p)
-                : target_node.setAttribute(...p);
+                ? target_element.addEventListener(...p)
+                : target_element.setAttribute(...p);
         }
     }
 
-    text(target, value) {
-        const target_node = this.element.querySelector(target);
-        if (target_node != null) target_node.textContent = value;
+    attr(selector, attributes) {
+        this.element.querySelectorAll(selector).forEach((i) => {this.#setAttr(i, attributes)});
+    }
+
+    text(selector, value) {
+        this.element.querySelectorAll(selector).forEach((i) => {i.textContent = value});
     }
 
     dot(dataset) {
