@@ -2,17 +2,20 @@ export class DOM {
     static template_placeholder = 'lazydom';
     static events = ['click', 'change', 'load'];
 
-    static CACHE = {};
+    static CACHE = new Map();
 
     element;
     style;
     classList;
 
-    constructor(selector = `.${DOM.template_placeholder}`, parent_node = document) {
+    constructor(
+        selector = `.${DOM.template_placeholder}`,
+        parent_node = document
+    ) {
         const template_element = this.#lookup(selector, parent_node);
-        (this.#isLazy(template_element)) 
+        this.#isLazy(template_element)
             ? this.#cloneElement(template_element, parent_node)
-            : this.element = template_element;
+            : (this.element = template_element);
         this.#styleShorthand();
     }
 
@@ -25,10 +28,8 @@ export class DOM {
     }
 
     #styleShorthand() {
-        if (! this.element) return;
-
-        this.style = this.element.style;
-        this.classList = this.element.classList;
+        this.style = this.element?.style;
+        this.classList = this.element?.classList;
     }
 
     #isLazy(target) {
@@ -43,28 +44,25 @@ export class DOM {
 
     #cleanUp(target) {
         //Remove the duplicated class which cloned from template
-        if (this.#isLazy(this.element)) this.element.classList.remove(DOM.template_placeholder);
+        if (this.#isLazy(this.element))
+            this.element.classList.remove(DOM.template_placeholder);
         //We could hide the template by default, show our element after cloned
-        if (this.element.style.display === 'none') this.element.style.display = '';
+        if (this.element.style.display === 'none')
+            this.element.style.display = '';
         //Remove the lazy template element from dom tree to save our time
         if (this.#isLazy(target)) target.remove();
     }
 
     #lookup(selector, parent_node) {
-        if ((parent_node in DOM.CACHE) && (selector in DOM.CACHE[parent_node])) {
-            return DOM.CACHE[parent_node][selector];
-        } else {
-            const r = parent_node.querySelector(selector);
-            //Cache the template element under its perent
-            if (!( parent_node in DOM.CACHE)) DOM.CACHE[parent_node] = {};
-            DOM.CACHE[parent_node][selector] = r;
-
-            return r;
-        }
+        if (!DOM.CACHE.has(parent_node)) DOM.CACHE.set(parent_node, new Map());
+        const map = DOM.CACHE.get(parent_node);
+        if (!map.has(selector))
+            map.set(selector, parent_node.querySelector(selector));
+        return map.get(selector);
     }
 
     q(selector) {
-        return this.element.querySelector(selector);
+        return this.#lookup(selector, this.element);
     }
 
     a(selector) {
@@ -81,11 +79,15 @@ export class DOM {
     }
 
     attr(selector, attributes) {
-        this.element.querySelectorAll(selector).forEach((i) => {this.#setAttr(i, attributes)});
+        this.element.querySelectorAll(selector).forEach((i) => {
+            this.#setAttr(i, attributes);
+        });
     }
 
     text(selector, value) {
-        this.element.querySelectorAll(selector).forEach((i) => {i.textContent = value});
+        this.element.querySelectorAll(selector).forEach((i) => {
+            i.textContent = value;
+        });
     }
 
     dot(dataset) {
@@ -95,6 +97,8 @@ export class DOM {
             //If there is attributes object, assign it
             if (d.length == 3) this.attr(d[0], d[2]);
         }
+
+        return this;
     }
 
     dom(selector = `.${DOM.template_placeholder}`) {

@@ -63,15 +63,13 @@ class Main extends DOM {
     render() {
         for (let i in this.contents) {
             const c = this.contents[i];
-            const img = this.thumbnails.dom('label.lazydom');
-            img.dot([
+            const img = this.thumbnails.dom('label.lazydom').dot([
                 ['img', '', { src: this.#imgUrl(c.image), alt: c.caption }],
                 ['input', '', { value: i, change: this.updateImg }],
             ]);
 
-            const inp = img.q('input');
-            inp.image = c.image;
-            inp.caption = c.caption;
+            img.q('input').image = c.image;
+            img.q('input').caption = c.caption;
         }
 
         this.thumbnails.q('input:first-child')?.click();
