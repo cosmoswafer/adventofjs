@@ -8,7 +8,10 @@ class Main {
     }
 
     clickButton = (e) => {
-        e.currentTarget.classList.toggle('expand');
+        const t = e.currentTarget;
+        const f = e.currentTarget.querySelector('.fulltext');
+        t.classList.toggle('expand');
+        (t.classList.contains('expand')) ? f.style.maxHeight = `${f.scrollHeight}px` : f.style.maxHeight = '0px';
     };
 }
 

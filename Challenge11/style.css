@@ -17,14 +17,12 @@
     --ticon: url('images/chevron.svg');
     --qicon: url('images/question-1.svg');
     --page-bkg: var(--lightgray);
-    --full-visible: 0;
 }
 
 .expand {
     --ticon: url('images/cross.svg');
     --qicon: url('images/question-2.svg');
     --page-bkg: var(--yellow);
-    --full-visible: 999999px;
 }
 
 body {
@@ -113,11 +111,6 @@ ul.question li:hover .title {
     width: var(--ticon-width);
 }
 
-ul.question li.expand .fulltext {
-    max-height: 9999999px;
-    transition: max-height 1.5s;
-}
-
 ul.question li .fulltext {
     background: var(--yellow);
     max-height: 0;
@@ -125,6 +118,7 @@ ul.question li .fulltext {
     padding: 0;
     transition: max-height 1.5s;
     width: var(--page-width);
+
 }
 
 .fulltext p {
