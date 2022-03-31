@@ -19,4 +19,11 @@ And use absolute position to set offset to the floating images.
 We have two sets of variable in different scope.
 Under the expand scope, it will apply another set of varibales to change the interface.
 
+Added CSS transition.
+
 ### JavaScript
+
+On the click event, we can use the `currentTarget` to access out element
+which we binded the event.
+Normally the `target` property is the element which user clicked,
+not the parent element which was binded.

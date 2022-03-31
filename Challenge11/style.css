@@ -7,6 +7,7 @@
     --lightgray: #f0f0f0;
     /*Dimension*/
     --page-width: 954px;
+    --para-height: 800px;
     --title-height: 125px;
     --qicon-height: 130px;
     --qicon-width: 70px;
@@ -16,27 +17,25 @@
     --ticon: url('images/chevron.svg');
     --qicon: url('images/question-1.svg');
     --page-bkg: var(--lightgray);
-    --full-display: none;
-    --title-display: block;
+    --full-visible: 0;
 }
 
 .expand {
     --ticon: url('images/cross.svg');
     --qicon: url('images/question-2.svg');
     --page-bkg: var(--yellow);
-    --full-display: block;
-    --title-display: none;
+    --full-visible: 999999px;
 }
 
 body {
     align-items: center;
     display: flex;
     font-family: var(--font-family);
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     margin: 0;
-    padding: 0;
-    width: 100vw;
+    padding: 10rem 0;
+    width: 100%;
 }
 
 ul.question {
@@ -52,6 +51,10 @@ ul.question {
 ul.question li {
     cursor: pointer;
     list-style: none;
+}
+
+ul.question li .title {
+    transition: 1s;
 }
 
 ul.question li:hover .title {
@@ -110,10 +113,17 @@ ul.question li:hover .title {
     width: var(--ticon-width);
 }
 
-.fulltext {
-    background: var(--page-bkg);
-    display: var(--full-display);
-    padding: 30px 0 0 0;
+ul.question li.expand .fulltext {
+    max-height: 9999999px;
+    transition: max-height 1.5s;
+}
+
+ul.question li .fulltext {
+    background: var(--yellow);
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 1.5s;
     width: var(--page-width);
 }
 
@@ -123,4 +133,8 @@ ul.question li:hover .title {
     line-height: 2.7rem;
     margin: 0;
     padding: 0 85px 55px 70px;
+}
+
+.fulltext p:first-child {
+    padding-top: 30px;
 }
