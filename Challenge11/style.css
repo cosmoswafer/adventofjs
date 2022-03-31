@@ -13,6 +13,8 @@
     --qicon-width: 70px;
     --ticon-height: 25px;
     --ticon-width: 24px;
+    /*Animation*/
+    --duration: 1.5s;
     /*Default scop*/
     --ticon: url('images/chevron.svg');
     --qicon: url('images/question-1.svg');
@@ -32,7 +34,7 @@ body {
     min-height: 100vh;
     justify-content: center;
     margin: 0;
-    padding: 10rem 0;
+    padding: 0;
     width: 100%;
 }
 
@@ -42,7 +44,7 @@ ul.question {
     flex-direction: column;
     gap: 75px;
     margin: 0;
-    padding: 0;
+    padding: var(--title-height) 0;
     padding-left: 56px; /* Offset to the total width for centering on the screen */
 }
 
@@ -52,7 +54,7 @@ ul.question li {
 }
 
 ul.question li .title {
-    transition: 1s;
+    transition: var(--duration);
 }
 
 ul.question li:hover .title {
@@ -88,6 +90,7 @@ ul.question li:hover .title {
     height: var(--qicon-height);
     position: absolute;
     right: 16px;
+    transition: var(--duration);
     top: -34px;
     width: var(--qicon-width);
 }
@@ -111,12 +114,15 @@ ul.question li:hover .title {
     width: var(--ticon-width);
 }
 
+ul.question li.expand .fulltext {
+}
+
 ul.question li .fulltext {
     background: var(--yellow);
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    transition: max-height 1.5s;
+    transition: max-height var(--duration);
     width: var(--page-width);
 
 }

@@ -4,6 +4,10 @@ class Main {
     constructor() {
         this.buttons.forEach((btn) => {
             btn.addEventListener('click', this.clickButton);
+            if (btn.classList.contains('expand')) {
+                const fulltext = btn.querySelector('.fulltext');
+                fulltext.style.maxHeight = `${fulltext.scrollHeight}px`;
+            }
         });
     }
 
