@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+:root {
+    /*Fonts*/
+    --main-fonts: 'Roboto Mono', monospace;
+    /*Colours*/
+    --main-colour: #ffb800;
+}
