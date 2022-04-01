@@ -1,6 +1,12 @@
-import './style.css';
+import { Router } from './util/router.js';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+class Main {
+    router = new Router();
+
+    constructor() {
+        this.router.addPages(['Fuck1', 'Fuck2', 'Fuck3']);
+        this.router.render('Fuck3');
+    }
+}
+
+const main = new Main();
