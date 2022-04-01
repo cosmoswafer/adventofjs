@@ -1,0 +1,1 @@
+@import"https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap";:root{--main-fonts: "Roboto Mono", monospace;--main-colour: #ffb800}body{font-family:var(--main-fonts)}#ready p.title{font-size:2.7rem;font-weight:700}
