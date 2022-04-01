@@ -4,15 +4,18 @@ export class Router {
     current_page = '';
     pages = new Array();
 
-    constructor() {
+    constructor(pages = []) {
         if (Router.#router != null) return Router.#router;
 
         Router.#router = this;
+        this.addPages(pages);
         window.addEventListener('hashchange', this.#pageChange);
     }
 
     addPages(page_ids) {
-        page_ids.forEach((p) => {this.pages.push(p)});
+        page_ids.forEach((p) => {
+            this.pages.push(p);
+        });
     }
 
     #pageChange = (e) => {

@@ -6,3 +6,12 @@
     /*Colours*/
     --main-colour: #ffb800;
 }
+
+body {
+    font-family: var(--main-fonts);
+}
+
+#ready p.title {
+    font-size: 2.7rem;
+    font-weight: bold;
+}
