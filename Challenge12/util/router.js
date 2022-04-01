@@ -4,16 +4,15 @@ export class Router {
     current_page = '';
     pages = new Array();
 
-    constructor(pages = []) {
+    constructor() {
         if (Router.#router != null) return Router.#router;
 
         Router.#router = this;
-        this.addPages(pages);
         window.addEventListener('hashchange', this.#pageChange);
     }
 
-    addPages(page_ids) {
-        page_ids.forEach((p) => {
+    addPages(...ids) {
+        ids.forEach((p) => {
             this.pages.push(p);
         });
     }
@@ -31,5 +30,23 @@ export class Router {
 
             if (p_div) p_div.style.display = p === page_id ? '' : 'none';
         }
+    }
+
+    goTo(page_id) {
+        location.hash = page_id;
+    }
+}
+
+export class PageBase {
+    router = new Router();
+    pid = '';
+
+    constructor(page_name) {
+        this.pid = page_name;
+        this.router.addPages(this.pid);
+    }
+
+    show() {
+        this.router.goTo(this.pid);
     }
 }

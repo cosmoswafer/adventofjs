@@ -1,10 +1,11 @@
-import { Router } from './util/router.js';
+import { Ready, Results } from './pages.js';
 
 class Main {
-    router = new Router(['ready', 'results']);
+    ready_page = new Ready();
+    results_page = new Results();
 
     constructor() {
-        this.router.render('ready');
+        this.ready_page.show();
     }
 }
 
