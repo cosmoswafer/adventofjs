@@ -1,14 +1,17 @@
 import { Router, PageBase } from './util/router.js';
 
 export class Ready extends PageBase {
-    constructor() {
-        super('ready');
+    constructor(store) {
+        super('ready', store);
     }
 }
 
 export class Results extends PageBase {
-    constructor() {
-        super('results');
+    bot_action = 'rock'
+    you_action = ''
+
+    constructor(store) {
+        super('results', store);
     }
 }
 

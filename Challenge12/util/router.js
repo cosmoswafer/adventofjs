@@ -40,13 +40,17 @@ export class Router {
 export class PageBase {
     router = new Router();
     pid = '';
+    store = null;
 
-    constructor(page_name) {
+    constructor(page_name, store = null) {
         this.pid = page_name;
         this.router.addPages(this.pid);
+        if (store != null) this.store = store;
     }
 
     show() {
-        this.router.goTo(this.pid);
+        location.hash === `#${this.pid}`
+            ? this.router.render(this.pid)
+            : this.router.goTo(this.pid);
     }
 }
