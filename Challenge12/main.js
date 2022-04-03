@@ -1,11 +1,16 @@
-import { StoreBase } from './util/lazydom.js';
 import { Ready, Results } from './pages.js';
 
-class Store extends StoreBase {
+class Store {
+    #page_store = [];
     actions = ['rock', 'paper', 'scissors'];
+    playerAction;
+
+    register(page_name, render_func) {
+        this.#page_store.push({ name: page_name, rend: render_func });
+    }
 
     notify() {
-        super.notify();
+        this.#page_store.forEach((i) => i.rend());
     }
 }
 

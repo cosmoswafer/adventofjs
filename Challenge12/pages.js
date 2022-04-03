@@ -24,23 +24,19 @@ export class Ready extends PageBase {
                 this.store.notify();
             });
         }
-        //this.store.register(this.page_name, this.dom, this.playGame, {playerPicked: 'p.title + a p'});
     }
-
-    //playGame = () => console.log(`Fuck game! ${this.store.playerPicked}`)
 }
 
 export class Results extends PageBase {
+    win_classes = { you: '.youwin', bot: '.botwin', draw: 'NOTFOUND' };
+    lose_classes = { you: '.botwin', bot: '.youwin', draw: '.botwin, .youwin' };
     bot_action = 'rock';
     you_action = '';
 
     constructor(store) {
         super('results');
         this.store = store;
-        this.store.register(this.page_name, this.dom, this.playGame, {
-            playerAction: '.player-action',
-            botAction: '.bot-action',
-        });
+        this.store.register(this.page_name, this.playGame);
     }
 
     #botAction() {
@@ -48,15 +44,32 @@ export class Results extends PageBase {
         return this.store.actions[rand_pick];
     }
 
+    #renderPage(winner) {
+        this.dom.dot([
+            ['.youact', '', { src: `${IMGDIR}/${this.you_action}.png` }],
+            ['.botact', '', { src: `${IMGDIR}/${this.bot_action}.png` }],
+        ]);
+
+        const winner_class = this.win_classes[winner];
+        const loser_class = this.lose_classes[winner];
+        this.dom.a(winner_class).forEach((i) => i.classList.remove('hide'));
+        this.dom.a(loser_class).forEach((i) => i.classList.add('hide'));
+    }
+
     #gameResults(bot, you) {
-        return bot === you ? 'draw' : 'Fuck';
+        if (bot === you) return 'draw';
+        else if (
+            (you === 'paper' && bot === 'rock') ||
+            (you === 'rock' && bot === 'scissors') ||
+            (you === 'scissors' && bot === 'paper')
+        )
+            return 'you';
+        else return 'bot';
     }
 
     playGame = () => {
         this.you_action = this.store.playerAction;
         this.bot_action = this.#botAction();
-        this.store.botAction = this.bot_action;
-        console.log(`Play game! ${this.you_action} vs ${this.bot_action}`);
-        console.log(this.#gameResults(this.bot_action, this.you_action));
+        this.#renderPage(this.#gameResults(this.bot_action, this.you_action));
     };
 }

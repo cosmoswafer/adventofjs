@@ -162,7 +162,7 @@ export class Router {
 export class StoreBase {
     #page_store = [];
 
-    register(page_name, dom_element, render_func, bindings) {
+    register(page_name, dom_element, render_func, bindings = {}) {
         this.#page_store.push({
             name: page_name,
             dom: dom_element,
