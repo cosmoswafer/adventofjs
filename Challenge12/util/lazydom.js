@@ -12,7 +12,7 @@
  *
  * Remarks:
  * 1. The lazy template will clone itself and clean up automatically.
-*/
+ */
 export class DOM {
     static template_placeholder = 'lazydom';
     static events = ['click', 'change'];
@@ -109,15 +109,15 @@ export class DOM {
     }
 
     attr(selector, attributes) {
-        this.element.querySelectorAll(selector).forEach((i) => {
-            this.#setAttr(i, attributes);
-        });
+        this.element
+            .querySelectorAll(selector)
+            .forEach((i) => this.#setAttr(i, attributes));
     }
 
     text(selector, value) {
-        this.element.querySelectorAll(selector).forEach((i) => {
-            i.textContent = value;
-        });
+        this.element
+            .querySelectorAll(selector)
+            .forEach((i) => (i.textContent = value));
     }
 }
 
@@ -134,9 +134,7 @@ export class Router {
     }
 
     addPages(...ids) {
-        ids.forEach((p) => {
-            this.pages.push(p);
-        });
+        ids.forEach((p) => this.pages.push(p));
     }
 
     #pageChange = (e) => {
@@ -161,19 +159,53 @@ export class Router {
     }
 }
 
+export class StoreBase {
+    #page_store = [];
+
+    register(page_name, dom_element, render_func, bindings) {
+        this.#page_store.push({
+            name: page_name,
+            dom: dom_element,
+            rend: render_func,
+        });
+        for (let k in bindings) {
+            this.#bindProp(dom_element, k, bindings[k]);
+        }
+    }
+
+    #bindProp(page_dom, name, selector) {
+        if (name in this) return; //Avoid redefine
+
+        Object.defineProperty(this, name, {
+            get() {
+                return page_dom.q(selector).textContent;
+            },
+            set(value) {
+                page_dom.text(selector, value);
+            },
+        });
+    }
+
+    notify() {
+        this.#page_store.forEach((i) => i.rend());
+    }
+}
+
 /*
  * The Router could switch between pages by the url anchor hash.
  * Just implement the PageBase class.
  * There are two methods to switch pages:
  * 1. Native anchor url, i.e. '#pageName'
  * 2. The `show()` method of a Page instance
-*/
+ */
 export class PageBase {
     router = new Router();
     #pid;
+    page_name;
 
     constructor(page_name) {
         this.#pid = page_name;
+        this.page_name = page_name;
         this.router.addPages(this.#pid);
         //Convert page name into CSS id format
         this.dom = new DOM(`#${this.#pid}`);

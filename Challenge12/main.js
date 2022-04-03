@@ -1,22 +1,11 @@
+import { StoreBase } from './util/lazydom.js';
 import { Ready, Results } from './pages.js';
 
-class Store {
-    #player_action = '';
-    #dom_store = {};
+class Store extends StoreBase {
+    actions = ['rock', 'paper', 'scissors'];
 
-    addDom(store_name, store_element) {
-        this.#dom_store[store_name] = store_element;
-    }
-
-    get player_action() {
-        const result_dom = this.#dom_store.results;
-        return result_dom?.q('.player-action').textContent;
-    }
-
-    set player_action(action) {
-        const result_dom = this.#dom_store.results;
-        console.log(`Set player action to ${action}`);
-        result_dom?.text('.player-action', action);
+    notify() {
+        super.notify();
     }
 }
 
