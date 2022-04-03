@@ -2,16 +2,21 @@ import { Ready, Results } from './pages.js';
 
 class Store {
     #player_action = '';
+    #dom_store = {};
 
-    constructor() {
+    addDom(store_name, store_element) {
+        this.#dom_store[store_name] = store_element;
     }
 
     get player_action() {
-        return this.#player_action;
+        const result_dom = this.#dom_store.results;
+        return result_dom?.q('.player-action').textContent;
     }
 
     set player_action(action) {
-        this.#player_action = action;
+        const result_dom = this.#dom_store.results;
+        console.log(`Set player action to ${action}`);
+        result_dom?.text('.player-action', action);
     }
 }
 

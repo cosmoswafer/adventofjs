@@ -1,3 +1,18 @@
+/*
+ * DOM usage:
+ *
+ * Two cases:
+ * 1. DOM methods shortcut, use normal selector to look up elements
+ * 2. Lazy template, look up the template element and update its contents
+ *
+ * The shortcuts:
+ * 1. Query element and cache them to improve the performance
+ * 2. The `dot` method to quickly update set of contents
+ * 3. Binding event listeners as well by the above methods
+ *
+ * Remarks:
+ * 1. The lazy template will clone itself and clean up automatically.
+*/
 export class DOM {
     static template_placeholder = 'lazydom';
     static events = ['click', 'change'];
@@ -17,6 +32,29 @@ export class DOM {
             ? this.#cloneElement(template_element, parent_node)
             : (this.element = template_element);
         this.#styleShorthand();
+    }
+
+    dot(dataset) {
+        for (let d of dataset) {
+            //If the second elemenmt is not empty text, set the textContent
+            if (d.length >= 2 && d[1] != '') this.text(d[0], d[1]);
+            //If there is attributes object, assign it
+            if (d.length == 3) this.attr(d[0], d[2]);
+        }
+
+        return this;
+    }
+
+    DOM(selector = `.${DOM.template_placeholder}`) {
+        return new DOM(selector, this.element);
+    }
+
+    q(selector) {
+        return this.#lookup(selector, this.element);
+    }
+
+    a(selector) {
+        return this.element.querySelectorAll(selector);
     }
 
     static fromElement(element) {
@@ -61,14 +99,6 @@ export class DOM {
         return map.get(selector);
     }
 
-    q(selector) {
-        return this.#lookup(selector, this.element);
-    }
-
-    a(selector) {
-        return this.element.querySelectorAll(selector);
-    }
-
     #setAttr(target_element, attributes) {
         for (let k in attributes) {
             const p = [k, attributes[k]];
@@ -89,20 +119,67 @@ export class DOM {
             i.textContent = value;
         });
     }
+}
 
-    dot(dataset) {
-        for (let d of dataset) {
-            //If the second elemenmt is not empty text, set the textContent
-            if (d.length >= 2 && d[1] != '') this.text(d[0], d[1]);
-            //If there is attributes object, assign it
-            if (d.length == 3) this.attr(d[0], d[2]);
-        }
+export class Router {
+    static #router = null;
 
-        return this;
+    constructor(default_page = '') {
+        if (Router.#router != null) return Router.#router;
+
+        Router.#router = this;
+        this.current_page = default_page;
+        this.pages = [];
+        window.addEventListener('hashchange', this.#pageChange);
     }
 
-    dom(selector = `.${DOM.template_placeholder}`) {
-        return new DOM(selector, this.element);
+    addPages(...ids) {
+        ids.forEach((p) => {
+            this.pages.push(p);
+        });
+    }
+
+    #pageChange = (e) => {
+        const page_id = location.hash.replace('#', '');
+        this.render(page_id);
+    };
+
+    render(page_id) {
+        if (!this.pages.includes(page_id)) return;
+
+        for (let p of this.pages) {
+            const p_div = document.querySelector(`#${p}`);
+
+            if (p_div) p_div.style.display = p === page_id ? '' : 'none';
+        }
+    }
+
+    goTo(page_id) {
+        location.hash === `#${page_id}`
+            ? this.render(page_id)
+            : (location.hash = page_id);
     }
 }
 
+/*
+ * The Router could switch between pages by the url anchor hash.
+ * Just implement the PageBase class.
+ * There are two methods to switch pages:
+ * 1. Native anchor url, i.e. '#pageName'
+ * 2. The `show()` method of a Page instance
+*/
+export class PageBase {
+    router = new Router();
+    #pid;
+
+    constructor(page_name) {
+        this.#pid = page_name;
+        this.router.addPages(this.#pid);
+        //Convert page name into CSS id format
+        this.dom = new DOM(`#${this.#pid}`);
+    }
+
+    show() {
+        this.router.goTo(this.#pid);
+    }
+}
