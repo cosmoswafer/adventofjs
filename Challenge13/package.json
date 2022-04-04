@@ -2,10 +2,10 @@
   "name": "challenge13",
   "private": true,
   "version": "0.0.0",
-    "prettier": {
-        "singleQuote": true,
-        "tabWidth": 4
-    },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 4
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

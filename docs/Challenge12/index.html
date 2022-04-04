@@ -6,18 +6,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>12 - Rock, Paper, Scissors Game || Advent of JavaScript</title>
         
-      <script type="module" crossorigin src="./assets/index.1be4161c.js"></script>
-      <link rel="stylesheet" href="./assets/index.0491c7cd.css">
+      <script type="module" crossorigin src="./assets/index.b9859069.js"></script>
+      <link rel="stylesheet" href="./assets/index.cb492c94.css">
     </head>
     <body>
         <div id="app">
             <div id="ready">
                 <p class="title">pick one</p>
-                <a href="#results">Play</a>
+                <a class="lazydom" href="#results"
+                    ><img src="images/rock.png" alt="" />
+                    <p>rock</p></a
+                >
             </div>
             <div id="results">
-                <p>Result pages.</p>
+                <p class="youwin">you win</p>
+                <p class="botwin">computer wins</p>
+                <img class="youact" src="images/paper.png" alt="" />
+                <img class="botact" src="images/scissors.png" alt="" />
                 <a href="#ready">Play again?</a>
+                <img class="youwin svg" src="images/you-win.svg" alt="" />
+                <img class="botwin svg" src="images/computer-wins.svg" alt="" />
             </div>
         </div>
         
