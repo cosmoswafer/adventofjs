@@ -8,3 +8,21 @@
     --background-colour: #fbfbfb;
     --highlight-colour: #ffd200;
 }
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(8,1fr);
+}
+
+.calendar img.left.btn {
+    transform: scaleX(-1);
+}
+
+.calendar p.month {
+    grid-column: 4/7;
+}
+
+.calendar p.day.today {
+    background: lightsalmon;
+}

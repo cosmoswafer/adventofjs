@@ -2,23 +2,49 @@ import { DOM } from './util/lazydom.js';
 
 class CalendarView {
     today = new Date();
+    calendar_month = this.today.getMonth() + 1; //Convert to [1,12]
+    calendar_year = this.today.getFullYear();
+
+    calrows = 6;
+    calcols = 7;
+    calcels = this.calrows * this.calcols;
+    day_cells = [];
 
     constructor(parent_element) {
+        console.log(`Today is ${this.today.toISOString()}`);
         this.calendar = parent_element.DOM('.calendar');
-        console.dir(this.today);
-        console.log(this.today.toISOString());
 
+        this.#drawElements();
         this.#buildCalendar();
     }
 
-    #buildCalendar() {
-        const offset = 2;
-        for (let i = 0; i < 7 * 5; i++) {
+    #drawElements() {
+        for (let i = 0; i < this.calcels; i++) {
             const day = this.calendar.DOM();
-            const d = i - offset;
-            day.element.textContent =
-                d > 0 && d <= 31 ? d : '_';
-            if (d == this.today.getDate()) day.classList.add('today');
+            day.element.textContent = '99';
+            this.day_cells.push(day);
+        }
+    }
+
+    #buildCalendar() {
+        const first_day = new Date(
+            `${this.calendar_year}-${this.calendar_month
+                .toString()
+                .padStart(2, '0')}-01`
+        );
+        console.log(first_day.toISOString());
+        const offset = first_day.getDay();
+        console.log(`First day offset: ${offset}`);
+        for (let i = 0; i < this.day_cells.length; i++) {
+            const day = this.day_cells[i];
+            const d = i + 1 - offset;
+            day.element.textContent = d >= 1 && d <= 31 ? d : ' ';
+            if (
+                this.calendar_year == this.today.getFullYear() &&
+                this.calendar_month == this.today.getMonth() + 1 &&
+                d == this.today.getDate()
+            )
+                day.classList.add('today');
         }
     }
 }
