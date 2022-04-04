@@ -13,12 +13,33 @@ class CalendarView {
     constructor(parent_element) {
         console.log(`Today is ${this.today.toISOString()}`);
         this.calendar = parent_element.DOM('.calendar');
+        this.left_btn = this.calendar.q('img.left.btn');
+        this.right_btn = this.calendar.q('img.right.btn');
 
-        this.#drawElements();
-        this.#buildCalendar();
+        this.buildCalendar();
+        this.bindEvents();
+        this.drawCalendar();
     }
 
-    #drawElements() {
+    bindEvents() {
+        this.left_btn.addEventListener('click', (e) => this.flipCalendar(-1));
+        this.right_btn.addEventListener('click', (e) => this.flipCalendar(+1));
+    }
+
+    flipCalendar(step) {
+        this.calendar_month += step;
+        if (this.calendar_month <= 0) {
+            this.calendar_year -= 1;
+            this.calendar_month = 12;
+        } else if (this.calendar_month > 12) {
+            this.calendar_year += 1;
+            this.calendar_month = 1;
+        }
+
+        this.drawCalendar();
+    }
+
+    buildCalendar() {
         for (let i = 0; i < this.calcels; i++) {
             const day = this.calendar.DOM();
             day.element.textContent = '99';
@@ -26,7 +47,7 @@ class CalendarView {
         }
     }
 
-    #buildCalendar() {
+    drawCalendar() {
         const first_day = new Date(
             `${this.calendar_year}-${this.calendar_month
                 .toString()
@@ -39,6 +60,7 @@ class CalendarView {
             const day = this.day_cells[i];
             const d = i + 1 - offset;
             day.element.textContent = d >= 1 && d <= 31 ? d : ' ';
+            day.classList.remove('today');
             if (
                 this.calendar_year == this.today.getFullYear() &&
                 this.calendar_month == this.today.getMonth() + 1 &&
