@@ -8,11 +8,13 @@
     --title-colour: #f40082;
     --button-colour: #ffd200;
     --maparea-colour: #3452a5;
+    --navyblue: rgb(32, 42, 68);
     /*Dimensions*/
     --close-btn-size: 50px;
 }
 
 body {
+    background: black;
     font-family: var(--main-fonts);
     margin: 0;
     padding: 0;
@@ -24,23 +26,42 @@ p {
 }
 
 #app {
-    min-height: 100vh;
+    margin: 0 auto;
     position: relative;
-    width: 100%;
+    width: fit-content;
 }
 
-#app img.background {
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -1;
+#app svg circle:hover {
+    cursor: pointer;
+}
+
+#app svg circle:hover + circle.outline {
+    animation-duration: 2s;
+    animation-name: zoomout;
+    animation-iteration-count: infinite;
+}
+
+@keyframes zoomout {
+    0% {
+        r: 17.5;
+        opacity: 1;
+    }
+
+    75% {
+        r: 47.5;
+        opacity: 1;
+    }
+
+    100% {
+        r: 57.5;
+        opacity: 0;
+    }
 }
 
 .modal::after {
     backdrop-filter: blur(3px);
-    background: rgba(0,0,0,.3);
-    content: "";
+    background: rgba(0, 0, 0, 0.3);
+    content: '';
     height: 100%;
     left: 0;
     position: fixed;
@@ -61,6 +82,7 @@ p {
     margin: var(--modal-gap);
     padding: 71px 104px;
     position: absolute;
+    top: 0;
 }
 
 .modal p.title {
@@ -80,7 +102,6 @@ p {
     padding-bottom: 30px;
 }
 
-
 .modal a.buy {
     align-items: center;
     background: var(--button-colour);
@@ -94,8 +115,13 @@ p {
     line-height: 1.5rem;
     padding: 20px 50px;
     text-align: center;
-    text-decoration: none;;
+    text-decoration: none;
     width: fit-content;
+}
+
+.modal a.buy:hover {
+    background: var(--navyblue);
+    color: var(--button-colour);
 }
 
 .modal img.cover {

@@ -24,7 +24,8 @@ class Main {
     modal = new ModalDiv(this.app);
 
     constructor() {
-        //this.app.q('img.background').addEventListener('click', (e) => this.modal.toggle());
+        this.modal.toggle();
+        this.app.q('svg > circle').addEventListener('click', (e) => this.modal.toggle());
     }
 }
 
