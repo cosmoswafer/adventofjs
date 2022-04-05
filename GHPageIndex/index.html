@@ -17,7 +17,9 @@
     </head>
     <body>
         <div id="app"></div>
-        <script>
+        <script type="module">
+            import {DOM} from 'https://jimmy09140456.github.io/lazydom/lazydom.js';
+
             const challenges_ol = document.createElement('ol');
             const app_div = document.querySelector('#app');
             app_div.append(challenges_ol);
@@ -35,6 +37,8 @@
                 new_a.textContent = `${target_ch}`;
                 new_a.setAttribute('href', `${target_ch}`);
             }
+
+            console.dir(DOM);
         </script>
     </body>
 </html>
