@@ -76,23 +76,23 @@ class Main {
 
     appendVideo(video) {
         const v = this.video_bar.DOM();
-        v.dot([
+        v.dot(
             ['a.title', video.title],
             ['a.thumbnail > img', '', { src: video.thumb, alt: video.title }],
             ['a', '', { click: (e) => this.selectVideo(video) }],
-        ]);
+        );
     }
 
     selectVideo = (v) => {
         console.log({ v });
         console.log('url: ', v.url);
-        this.featured_video.dot([
+        this.featured_video.dot(
             //['a.video', '', { href: v.url }],
             //['a.video img', '', { src: v.thumb, alt: v.title }],
             ['a.video iframe', '', { src: v.url }],
             ['p.title', v.title],
             ['p.description', v.desc],
-        ]);
+        );
     };
 
     dataParser(data) {

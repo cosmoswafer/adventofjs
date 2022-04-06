@@ -26,7 +26,6 @@ class CalendarView {
 
     constructor(parent_element) {
         this.calendar = parent_element.DOM('.calendar');
-        this.month_title = parent_element.DOM('.month');
         this.left_btn = this.calendar.q('img.left.btn');
         this.right_btn = this.calendar.q('img.right.btn');
 
