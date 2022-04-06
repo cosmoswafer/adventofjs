@@ -47,3 +47,4 @@ vary: Origin, X-Origin, Referer
 
 -   Fetch data form YouTube API and parse the data
 -   Replace the featured video if user clicks one of the list items
+
