@@ -35,7 +35,6 @@
                 padding: 0;
             }
 
-
             ol.chdir li:hover {
                 background: var(--back-colour);
                 color: var(--main-colour);
@@ -44,7 +43,7 @@
             ol.chdir li {
                 border-radius: 10px;
                 list-style: none;
-                padding: .5em 0;
+                padding: 0.5em 0;
             }
 
             ol.chdir li a {
@@ -53,7 +52,6 @@
                 text-decoration: none;
                 width: 100%;
             }
-
         </style>
     </head>
     <body>
@@ -74,11 +72,9 @@
             for (let i of index) {
                 const ch = app.DOM();
                 ch.dot([
-                    [
-                        'a',
-                        `Challenge ${String(i + 1).padStart(2, '0')}`,
-                        { href: `Challenge${String(i + 1).padStart(2, '0')}` },
-                    ],
+                    'a',
+                    `Challenge ${String(i + 1).padStart(2, '0')}`,
+                    { href: `Challenge${String(i + 1).padStart(2, '0')}` },
                 ]);
             }
         </script>
