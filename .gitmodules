@@ -1,3 +1,6 @@
 [submodule "Challenge14/lib/lazydom"]
 	path = Challenge14/lib/lazydom
-	url = git@github.com:jimmy09140456/lazydom.git
+    url = https://github.com/jimmy09140456/lazydom.git
+[submodule "Challenge15/lib/lazydom"]
+	path = Challenge15/lib/lazydom
+    url = https://github.com/jimmy09140456/lazydom.git

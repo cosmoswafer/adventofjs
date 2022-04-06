@@ -1,0 +1,693 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "tKccVkLGa4c8EtEaCPqGu3YJeb4",
+  "nextPageToken": "CBQQAA",
+  "regionCode": "MO",
+  "pageInfo": {
+    "totalResults": 348,
+    "resultsPerPage": 20
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "RjCq8VooL8pBL1Z4hSG4lghdvOk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "G3Z-RcoJ0zo"
+      },
+      "snippet": {
+        "publishedAt": "2022-04-02T11:00:14Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌ってみた】ベテルギウス - 優里 / covered by MaiR【オリジナルMV】",
+        "description": "オリジナル⋆ 優里 『ベテルギウス』Official Music Video https://www.youtube.com/watch?v=cbqvxDTLMps 作詞・作曲：優里 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/G3Z-RcoJ0zo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/G3Z-RcoJ0zo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/G3Z-RcoJ0zo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-04-02T11:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "b8ZSShUJq1M4_glZtGik7fR6AYs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "O5xrnCD3XHA"
+      },
+      "snippet": {
+        "publishedAt": "2022-03-29T13:02:44Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌枠】歌ったり話したり、あとは・・・！！SINGING STREAM【 #MaiR 】",
+        "description": "さぁやってまいりました！世界のMaiRだーっ！ 歌ったり話したり、めあから言いたいことがあったり   宇宙イチの、キミだけのスーパースター ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/O5xrnCD3XHA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/O5xrnCD3XHA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/O5xrnCD3XHA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-03-29T13:02:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-6yix9s3f4Tkt60NjKb9K_gBj7Y",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "BVR07JWhGBA"
+      },
+      "snippet": {
+        "publishedAt": "2022-03-26T11:00:13Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌ってみた】明け星 - LiSA / covered by MaiR【オリジナルMV】（テレビアニメ「鬼滅の刃」無限列車編 オープニングテーマ）",
+        "description": "LiSA 『明け星』 -MUSiC CLiP-（テレビアニメ「鬼滅の刃」無限列車編 オープニングテーマ） ⋆本家様 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/BVR07JWhGBA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/BVR07JWhGBA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/BVR07JWhGBA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-03-26T11:00:13Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "H25-RowGJwqWqF6iWrk3jNLylxk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pCDuIV6iE_I"
+      },
+      "snippet": {
+        "publishedAt": "2022-03-21T13:23:05Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌枠】復活のM！みんなただいまーー！！☻SINGING STREAM【 #MaiR 】",
+        "description": "さぁやってまいりました！世界のMaiR～だっ！ お休みから帰ってきましたーーー！！ただいまんぼう     宇宙イチの、キミだけのスーパー ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pCDuIV6iE_I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pCDuIV6iE_I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pCDuIV6iE_I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-03-21T13:23:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "t45C8VtEOJUlb5ok-a6kSnBrREE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jH-HA-VMlZE"
+      },
+      "snippet": {
+        "publishedAt": "2022-02-15T14:18:37Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌枠】お休み前最後の歌枠☻SINGING STREAM【 #MaiR 】",
+        "description": "さぁやってまいりました！世界のMaiR～だっ！ お休み前の歌枠！！！たくさん歌うヨゥ！！！！ 宇宙イチの、キミだけのスーパースターに ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jH-HA-VMlZE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jH-HA-VMlZE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jH-HA-VMlZE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-02-15T14:18:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WajviHP8sTW2p1GILxVjxNtOZNY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "0hXTHQEyoUg"
+      },
+      "snippet": {
+        "publishedAt": "2022-02-15T11:00:13Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌ってみた】残響散歌 - Aimer / covered by MaiR【オリジナルMV】（テレビアニメ「鬼滅の刃」遊郭編オープニングテーマ）",
+        "description": "Aimer「残響散歌」MUSIC VIDEO（テレビアニメ「鬼滅の刃」遊郭編オープニングテーマ） ⋆本家様 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/0hXTHQEyoUg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/0hXTHQEyoUg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/0hXTHQEyoUg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-02-15T11:00:13Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "nekefYlBgTgYvZmtypClDXKUsxQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "C9666C3iVu0"
+      },
+      "snippet": {
+        "publishedAt": "2022-02-07T11:00:14Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "ジェノサイドソウ・ヘヴン -Short ver- / covered by MaiR【IMAGINATION vol.4】#シンフォギア10周年",
+        "description": "VTuberコンピレーションアルバム 「IMAGINATION vol.4 ~戦姫絶唱シンフォギア 10 YEARS TRIBUTE~」 デジタル配信：2022.02.12 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/C9666C3iVu0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/C9666C3iVu0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/C9666C3iVu0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-02-07T11:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "woY2qmujHtvU8Dd8TgK0mG3Bx6o",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yMto9JlW3kU"
+      },
+      "snippet": {
+        "publishedAt": "2022-01-27T14:20:04Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌枠】新年初！歌いまくるぞう！！！🐘SINGING STREAM【 #MaiR 】",
+        "description": "さぁやってまいりました！世界のMaiR～だっ！ 新年！初！歌枠だーーーーー！！！ 新しい曲もいろいろ覚えたから歌うぞおおお  =3 宇宙 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yMto9JlW3kU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yMto9JlW3kU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yMto9JlW3kU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-27T14:20:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EDBZ7Q42zwWBqRWNN819IvPgiF0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "CljOAJ5CsLk"
+      },
+      "snippet": {
+        "publishedAt": "2022-01-08T12:00:14Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌ってみた】往け - LiSA / covered by MaiR【オリジナル3DMV】",
+        "description": "LiSA 『往け』 -MUSiC CLiP- （『劇場版 ソードアート・オンライン -プログレッシブ- 星なき夜のアリア』主題歌） ⋆本家様 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/CljOAJ5CsLk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/CljOAJ5CsLk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/CljOAJ5CsLk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-08T12:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YtlHdEofevYE0C5sj5RAgxB8oSM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "BXDecggNOYY"
+      },
+      "snippet": {
+        "publishedAt": "2022-01-01T03:00:05Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【2022】新年のご挨拶ダーーーッ！！！！！",
+        "description": "明けましておめでとうございます！！！ 2022年は「楽しむこと」を大切にしたいですっ。 今年も、MaiRをよろしくお願いします   ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/BXDecggNOYY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/BXDecggNOYY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/BXDecggNOYY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-01T03:00:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "AnU8smpnb8wbonaBX0gu3H4T6aY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "n_QgzuzKvrM"
+      },
+      "snippet": {
+        "publishedAt": "2021-12-31T16:09:43Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【年越し生放送】2021年を振り返りながら、2022年を迎える！！！！！",
+        "description": "今年もあっという間にすぎてったなぁ…   ☆━━━━－－－－—————— ⋆ お知らせまとめ ⋆ ○ZEENY × MaiR コラボイヤフォン受注 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/n_QgzuzKvrM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/n_QgzuzKvrM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/n_QgzuzKvrM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-31T16:09:43Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Z3SztF5QRT04J3N-1BHTnp4hgUI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4UthBcSg8Io"
+      },
+      "snippet": {
+        "publishedAt": "2021-12-25T11:45:12Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【エンドロールクレジット】MaiR 2nd ONE-MAN LIVE「SUPERB!!!」",
+        "description": "2021年12月11日(土)に開催されたMaiR 2nd ONE-MAN LIVE「SUPERB!!!」のエンドロールクレジット映像です。 このライブはクラウド ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4UthBcSg8Io/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4UthBcSg8Io/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4UthBcSg8Io/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-25T11:45:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qrFYZEquVd38ropGAN6ma5XqKCg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "DnvFOc3xjSc"
+      },
+      "snippet": {
+        "publishedAt": "2021-12-25T11:00:16Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "MaiR 2nd ONE-MAN LIVE「SUPERB!!!」ダイジェスト",
+        "description": "2021年12月11日(土)に開催されたMaiR 2nd ONE-MAN LIVE「SUPERB!!!」のダイジェスト映像です。 このライブはクラウドファンディング ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DnvFOc3xjSc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DnvFOc3xjSc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DnvFOc3xjSc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-25T11:00:16Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "S0mWmxPdoOX2OT0QRnXSXrzlk48",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "e4SyGs3y1uM"
+      },
+      "snippet": {
+        "publishedAt": "2021-12-24T12:47:44Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌枠】クリスマスだし冬曲歌う！！！！！！！【MaiR】",
+        "description": "めりーくりすます     なんと一ヶ月以上ぶりの歌枠です。 なんだか…緊張するね……！！？ ☆━━━━－－－－—————— ⋆ お知らせ ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/e4SyGs3y1uM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/e4SyGs3y1uM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/e4SyGs3y1uM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-24T12:47:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "iGxNqLjBnh9zbSqmejzDSpM6C9M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "i0A5HepMSLk"
+      },
+      "snippet": {
+        "publishedAt": "2021-12-16T14:26:29Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【 2nd ONE-MAN LIVE 】&quot;SUPERB!!!&quot;アフタートーク⚡【 #MaiR2ndワンマン 】",
+        "description": "話したい事いっぱい！！裏話もいっぱい！！！！！ ☆━━━━－－－－—————— ⋆ お知らせまとめ ⋆ ○ZEENY × MaiR コラボ ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/i0A5HepMSLk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/i0A5HepMSLk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/i0A5HepMSLk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-16T14:26:29Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "V3sRwRx1EcwRjOh1ofrac6_FBlU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Lq_uCT4BmeE"
+      },
+      "snippet": {
+        "publishedAt": "2021-11-19T16:19:06Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "『paint the STAR』リリースカウントダウン配信！！！#ペイントザスター",
+        "description": "2021/11/20 23：30- ついに明日は…アルバムリリース！！！！！ みんなで20日をむかえたい！",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Lq_uCT4BmeE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Lq_uCT4BmeE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Lq_uCT4BmeE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-11-19T16:19:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9GnXCf-7dP7NSyBxiU-wMKTTIIQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Sf3aoKQGfPQ"
+      },
+      "snippet": {
+        "publishedAt": "2021-11-13T11:00:14Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "MaiR 2nd Album『paint the STAR』クロスフェード #ペイントザスター",
+        "description": "MaiR 2nd Album『paint the STAR』 2021.11.20 Release ご購入はこちら！ ▽MaiRオンラインショップ(CD) ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Sf3aoKQGfPQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Sf3aoKQGfPQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Sf3aoKQGfPQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-11-13T11:00:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "gT3LV-CyKaQ7bVoeFLoUQvyR9Ho",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ofKDehxWaSA"
+      },
+      "snippet": {
+        "publishedAt": "2021-11-03T12:00:13Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌ってみた】僕が夢を捨てて大人になるまで covered by MaiR",
+        "description": "僕が夢を捨てて大人になるまで」傘村トータ feat.初音ミク いつまでも歌が歌えたらいい ✭------------------------------------------✭ 【お知らせ】 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ofKDehxWaSA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ofKDehxWaSA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ofKDehxWaSA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-11-03T12:00:13Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Hid7XTVbjpGPRCpreNOs9k1LEyA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "AmnUvLDIn-g"
+      },
+      "snippet": {
+        "publishedAt": "2021-11-02T12:26:27Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【歌枠】アニソンたくさん歌う！！重大発表もあるよ！！？【#めあなま】",
+        "description": "2021/11/2 19時から！ アルバムリリース発表も記念して！？ さらに、2ndワンマンに関して重大発表もある！！？ そんな歌枠なのだ ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/AmnUvLDIn-g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/AmnUvLDIn-g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/AmnUvLDIn-g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-11-02T12:26:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "4B3uX0VkqFTVPK0-lnrfeGw58RU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "g7z_Eb3ciV0"
+      },
+      "snippet": {
+        "publishedAt": "2021-10-25T12:57:54Z",
+        "channelId": "UCsiKFVHkQSMlSe0vaCG0anw",
+        "title": "【ゲリラ歌枠】数億年ぶりの歌枠キターーーーー！！！！！#めあなま",
+        "description": "2021/10/25 20時から！ ひっさしぶりの歌枠じゃ～～～い！！！ 好きな曲いっぱい歌ってやるうううううう ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/g7z_Eb3ciV0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/g7z_Eb3ciV0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/g7z_Eb3ciV0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MaiR Official YouTube",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-10-25T12:57:54Z"
+      }
+    }
+  ]
+}
+

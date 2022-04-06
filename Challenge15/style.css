@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+:root {
+    --main-fonts: 'Roboto', sans-serif;
+    /*Colours*/
+    --black: #000000;
+    --white: #ffffff;
+    /*Dimension*/
+    --gap-size: 50px;
+    --title-height: 100px;
+    --content-height: calc(100vh - var(--title-height) - var(--gap-size));
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--main-fonts);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+#app {
+    display: grid;
+    gap: var(--gap-size);
+    grid-template-areas: 'head head' 'feat list';
+    grid-template-columns: min-content 377px;
+    justify-content: center;
+}
+
+#app .title {
+    align-items: flex-end;
+    display: flex;
+    grid-area: head;
+    height: var(--title-height);
+}
+
+#app .featured {
+    max-height: var(--content-height);
+    overflow-y: scroll;
+}
+
+#app .featured img {
+    height: 576px;
+    object-fit: cover;
+    object-position: center center;
+    width: 1024px;
+}
+
+#app .featured p.title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin: 68px 0 1rem;
+}
+
+#app .featured p.description {
+    line-height: 1.5em;
+}
+
+#app .listbar {
+    max-height: var(--content-height);
+    overflow-y: scroll;
+}
+
+#app .listbar ol.video-bar li {
+    align-items: flex-start;
+    display: flex;
+    gap: 11px;
+    margin-bottom: 29px;
+}
+
+#app .listbar ol.video-bar li a.thumbnail img {
+    width: 120px;
+}
+
+#app .listbar ol.video-bar li a.title {
+    align-items: flex-start;
+    display: flex;
+    font-weight: bold;
+    overflow: hidden;
+}
