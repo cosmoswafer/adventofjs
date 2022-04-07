@@ -5,29 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Challenges Index || Advent of JavaScript</title>
         <style>
-            @import 'https://unpkg.com/normalize.css@8.0.1/normalize.css';
+            @import 'https://unpkg.com/normalize.css/normalize.css';
 
             :root {
                 --american-yellow: #f1b900;
                 --navy-blue: #030081;
                 --cetacean-blue: #0c005b;
                 --cyber-yellow: #ffd301;
+                --midnight-blue: #000033;
+                --charcoal-gray: #333333;
                 --back-colour: var(--cetacean-blue);
                 --main-colour: var(--cyber-yellow);
+                --title-colour: var(--navy-blue);
             }
 
             body {
+                color: var(--back-colour);
                 font-size: 200%;
+                text-align: center;
+                margin: 2em auto;
             }
 
-            #app {
-                font-family: Avenir, Helvetica, Arial, sans-serif;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                text-align: center;
-                color: #2c3e50;
-                margin-bottom: 60px;
-                margin-top: 60px;
+            h1, h2 {
+                color: var(--title-colour);
             }
 
             ol.chdir {
@@ -48,9 +48,19 @@
 
             ol.chdir li a {
                 color: inherit;
-                display: block;
+                display: grid;
+                gap: 1em;
+                grid-template-columns: 1fr 1fr;
                 text-decoration: none;
                 width: 100%;
+            }
+
+            ol.chdir a span.idx {
+                text-align: right;
+            }
+
+            ol.chdir a span.title {
+                text-align: left;
             }
         </style>
     </head>
@@ -59,23 +69,46 @@
             <h1>Advent of JavaScript and CSS!</h1>
             <h2>Challenges directory:</h2>
             <ol class="chdir">
-                <li class="lazydom"><a href="#">Challenge00</a></li>
+                <li class="lazydom">
+                    <a href="#">
+                        <span class="idx">Challenge 00: </span><span class="title">TITLE_HERE</span>
+                    </a>
+                </li>
             </ol>
         </div>
         <script type="module">
             import { DOM } from 'https://jimmy09140456.github.io/lazydom/dom.js';
 
+            const challenge_list = [
+                'Pomodoro Timer',
+                'An eCommerce component',
+                'Keyboard',
+                'Computer Keyboard',
+                'Multiple Checkboxes',
+                'Range Slider',
+                'Tip Calculator',
+                'Weather Forecast',
+                'Image Carousel',
+                'Verification Code Form',
+                'Expanding and Collapsing Sections',
+                'Rock, Paper, Scissors Game',
+                'Custom Modal',
+                'Calendar Viewer',
+                'YouTube Video Gallery',
+                'Star Rating',
+            ];
+
             const app = new DOM('#app');
 
-            //Here we have total 24 challenges.
-            const index = [...Array(24).keys()];
-            for (let i of index) {
+            for (let i = 0; i < challenge_list.length; i++) {
+                const idx = String(i + 1).padStart(2, '0');
+                const title = challenge_list[i];
                 const ch = app.DOM();
-                ch.dot([
-                    'a',
-                    `Challenge ${String(i + 1).padStart(2, '0')}`,
-                    { href: `Challenge${String(i + 1).padStart(2, '0')}` },
-                ]);
+                ch.dot(
+                    ['a', '', { href: `Challenge${idx}/` }],
+                    ['span.idx', `Challenge ${idx}: `],
+                    ['span.title', title]
+                );
             }
         </script>
     </body>
