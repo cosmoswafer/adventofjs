@@ -1,8 +1,39 @@
+:root {
+    --solid-colour: #ffd200;
+    --outline-colour: #808080;
+    --star-height: 151px;
+    --start-width: 152px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.bar {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.bar svg {
+    cursor: pointer;
+    fill: none;
+    height: var(--star-height);
+    stroke: var(--outline-colour);
+    stroke-width: 0.5rem;
+    width: var(--start-width);
+}
+
+div[class^='s']:hover svg,
+div[class^='s']:hover ~ div svg,
+div[class^='s'].selected svg,
+div[class^='s'].selected ~ div svg {
+    fill: var(--solid-colour);
 }
