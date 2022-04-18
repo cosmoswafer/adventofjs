@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --main-fonts: 'Roboto', sans-serif;
+    --pink: #f40082;
+    --quota-text: #8b8b8b;
+    --page-head: 160px;
+}
+
+body {
+    font-family: var(--main-fonts);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.625rem;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.625rem;
+    font-weight: 900;
+}
+
+p {
+    line-height: 2em;
+    margin: 0;
+    margin-bottom: 2em;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--pink);
+    font-weight: bold;
+}
+
+.content {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+aside {
+    grid-column: 2/4;
+}
+
+aside > div {
+    padding-top: var(--page-head);
+    position: sticky;
+    top: 0;
+}
+
+aside .table-of-contents {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+aside ul {
+    line-height: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside li {
+    padding-top: 1em;
+}
+
+aside ul a {
+    color: unset;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+aside ul li.selected {
+    color: var(--pink);
+    font-weight: bold;
+    position: relative;
+}
+
+aside ul li.selected:before {
+    content: '';
+    border-left: 2px solid var(--pink);
+    height: 120%;
+    left: -2em;
+    position: absolute;
+    top: 10%;
+}
+
+main {
+    grid-column: 5/11;
+    margin-top: var(--page-head);
+}
+
+.image-text-wrapper {
+    display: flex;
+}
+
+.image-text-wrapper .image-text-wrapper__image {
+    margin-left: -100px;
+    margin-right: 65px;
+}
+
+.image-text-wrapper .image-text-wrapper__image img {
+    max-width: unset;
+}
+
+blockquote {
+    color: var(--quota-text);
+    font-size: 1.625rem;
+    line-height: 2.5rem;
+    margin: 2.5rem 120px;
+}
+
+.image {
+    color: var(--quota-text);
+    font-size: 0.875rem;
+    line-height: 2.125rem;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.image img {
+    margin-left: -10%;
+    max-width: unset;
+    width: 120%;
+}
+
+p:last-child {
+    font-weight: bold;
+}
