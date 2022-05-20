@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --background-colour: #f1f7f4;
+    --main-colour: #31292f;
+    --knob-colour: #56858a;
+    --range-bkg: #cedfe1;
+    --copied-colour: #4a9661;
+}
+
+body {
+    align-items: center;
+    background: var(--background-colour);
+    color: var(--main-colour);
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    width: 100%;
+}
+
+svg.symbols {
+    position: absolute;
+}
+
+#app {
+}
+
+.passwd {
+    align-items: center;
+    display: flex;
+    gap: 18px;
+}
+
+.passwd .text {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 24px #cadbd2;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2rem;
+    padding: 28px 37px;
+    width: 16em;
+    word-wrap: break-word;
+}
+
+.passwd svg {
+    --copy-size: 54px;
+    --fill-colour: #7da9ae;
+    fill: var(--fill-colour);
+    height: var(--copy-size);
+    width: var(--copy-size);
+}
+
+.passwd.copied svg {
+    --fill-colour: var(--copied-colour);
+}
+
+.passwd > p {
+    color: var(--copied-colour);
+    font-weight: bold;
+    margin: 0;
+    opacity: 0;
+}
+
+.passwd.copied > p {
+    opacity: 1;
+}
+
+.ranger > label {
+    align-items: center;
+    display: flex;
+    gap: 35px;
+}
+
+.ranger input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--range-bkg);
+    border-radius: 4px;
+    height: 9px;
+    width: 385px;
+}
+
+.ranger input[type='range']::-webkit-slider-thumb {
+    --knob-size: 34px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--knob-colour);
+    border-radius: 50%;
+    height: var(--knob-size);
+    width: var(--knob-size);
+}
+
+ul.options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.options input[type='checkbox'] {
+    display: none;
+}
+
+ul.options input[type='checkbox'] + p {
+    --checkbox-size: 36px;
+    --checkbox-image: url('images/checkbox--unchecked.svg') no-repeat;
+    background: var(--checkbox-image);
+    cursor: pointer;
+    line-height: var(--checkbox-size);
+    min-height: var(--checkbox-size);
+    padding-left: calc(var(--checkbox-size) * 1.5);
+}
+
+ul.options input[type='checkbox']:checked + p {
+    --checkbox-image: url('images/checkbox--checked.svg') no-repeat;
+}
