@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="./assets/favicon.17e50649.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>18 - Password Generator || Advent of JavaScript</title>
+        
+      <script type="module" crossorigin src="./assets/index.b3261f1a.js"></script>
+      <link rel="stylesheet" href="./assets/index.dba2bae3.css">
+    </head>
+    <body>
+        <div id="app">
+            <div class="passwd copied">
+                <div class="text">PaV5`(^W*}VrCATWt</div>
+                <svg class="btn" xmlns="http://www.w3.org/2000/svg">
+                    <use href="#copy-svg" />
+                </svg>
+                <p>Copied</p>
+            </div>
+            <div class="ranger">
+                <label>
+                    <input
+                        name="length"
+                        type="range"
+                        min="6"
+                        max="32"
+                        step="1"
+                        value="12"
+                    />
+
+                    <p><span class="value">12</span> characters</p>
+                </label>
+            </div>
+            <ul class="options">
+                <li>
+                    <label>
+                        <input name="symbols" type="checkbox" />
+                        <p><b>Include Symbols</b> (@#$%)</p>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input name="numbers" type="checkbox" checked />
+                        <p><b>Include Numbers</b> (1234)</p>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input name="lowercase" type="checkbox" />
+                        <p><b>Include Lowercase Characters</b> (abcd)</p>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input name="uppercase" type="checkbox" />
+                        <p><b>Include Uppercase Characters</b> (ABCD)</p>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input name="similar" type="checkbox" />
+                        <p>
+                            <b>Exclude Similar Characters</b> (i, l, 1, L, o, 0,
+                            O)
+                        </p>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <svg class="symbols" xmlns="http://www.w3.org/2000/svg">
+            <symbol id="copy-svg" viewBox="0 0 55 55">
+                <path
+                    d="M37.3147 2.83081H20.6332C18.1514 2.83081 16.1332 4.85131 16.1332 7.33081V38.8308C16.1332 41.3126 18.1514 43.3308 20.6332 43.3308H43.1332C45.6149 43.3308 47.6332 41.3126 47.6332 38.8308V13.1493L37.3147 2.83081ZM43.1354 38.8308H20.6332V7.33081H34.1332V16.3308H43.1332L43.1354 38.8308Z"
+                />
+                <path
+                    d="M11.6332 11.8308H7.13318V47.8308C7.13318 50.3126 9.15143 52.3308 11.6332 52.3308H38.6332V47.8308H11.6332V11.8308Z"
+                />
+            </symbol>
+        </svg>
+        
+    </body>
+</html>
