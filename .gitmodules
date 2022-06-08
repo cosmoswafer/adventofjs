@@ -6,3 +6,7 @@
     branch = release
 	path = Challenge15/lib/lazydom
     url = https://github.com/jimmy09140456/lazydom.git
+[submodule "Challenge19/lib/lazydom"]
+	path = Challenge19/lib/lazydom
+	url = https://github.com/jimmy09140456/lazydom.git
+	branch = release
