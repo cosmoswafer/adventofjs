@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="./assets/favicon.17e50649.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>19 - Form Validator || Advent of JavaScript</title>
+        
+      <script type="module" crossorigin src="./assets/index.61969ca3.js"></script>
+      <link rel="stylesheet" href="./assets/index.e5e2b7b1.css">
+    </head>
+    <body>
+        <div id="app">
+            <h1>Signup</h1>
+            <!-- Name text input -->
+            <div class="field">
+                <input id="name" name="name" type="text" placeholder=" " />
+                <label for="name">Name</label>
+                <div class="success hide"><img src="images/success.svg" /></div>
+                <div class="errors">
+                    <img src="images/error.svg" /><span class="msg"
+                        >A name is required</span
+                    >
+                </div>
+            </div>
+            <!-- Name text input -->
+            <!-- Email text input -->
+            <div class="field">
+                <input id="email" name="email" type="text" placeholder=" " />
+                <label for="email">Email</label>
+                <div class="success"><img src="images/success.svg" /></div>
+                <div class="errors hide">
+                    <img src="images/error.svg" /><span class="msg"
+                        >A name is required</span
+                    >
+                </div>
+            </div>
+            <!-- Email text input -->
+            <!-- Password input fields -->
+            <div class="field">
+                <input
+                    id="passwd"
+                    name="passwd"
+                    type="password"
+                    placeholder=" "
+                />
+                <label for="passwd">Password</label>
+                <a href="#" class="toggle-pwd" for="passwd"><img src="images/show.svg" alt=""></a>
+                <div class="success"><img src="images/success.svg" /></div>
+                <div class="errors hide">
+                    <img src="images/error.svg" /><span class="msg"
+                        >A name is required</span
+                    >
+                </div>
+            </div>
+            <div class="field">
+                <input
+                    id="passwd-repeat"
+                    name="passwd-repeat"
+                    type="password"
+                    placeholder=" "
+                />
+                <label for="passwd-repeat">Confirm Password</label>
+                <a href="#" class="toggle-pwd" for="passwd-repeat"><img src="images/show.svg" alt=""></a>
+                <div class="success"><img src="images/success.svg" /></div>
+                <div class="errors hide">
+                    <img src="images/error.svg" /><span class="msg"
+                        >A name is required</span
+                    >
+                </div>
+            </div>
+            <!-- Password input fields -->
+            <div class="field"><a class="button" href="#">Submit</a></div>
+        </div>
+        
+    </body>
+</html>
