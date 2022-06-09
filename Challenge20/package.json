@@ -1,0 +1,17 @@
+{
+  "name": "challenge20",
+  "private": true,
+  "version": "0.0.0",
+    "prettier": {
+        "singleQuote": true,
+        "tabWidth": 4
+    },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9"
+  }
+}
