@@ -19,9 +19,20 @@
 
 ### CSS
 
--
+-   CSS grid layout to place the elements
 
 ### JavaScript
 
--
+-   App object controls the balance
+    -   It owns the Expense object and Budget object
+    -   There is a notify function in the App object
+    -   When the Income or Expense were updated, it will call the notify function to update the balance
+    -   This object act as the centra controller to update the balance
+-   Expense object controls the expense list
+    -   When user click the add button, it will add new item
+    -   When user click the trash button, it will remove that item
+    -   Both actions will trigger the App object to update the balance
+-   Budget object controls the budget
+    -   When the input number was changed by user
+    -   It will trigger the App object to update the balance
 
