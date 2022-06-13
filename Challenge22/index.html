@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>22 - Credit Card form || Advent of JavaScript</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div class="credit-card-cover">
+                <div class="front">
+                    <div class="card-number">
+                        <div class="shadow">1234 1234 1234 1234</div>
+                        <div class="emboss">1234 1234 1234 1234</div>
+                    </div>
+                    <div class="holder">
+                        <div class="shadow">Amy Dutton</div>
+                        <div class="emboss">Amy Dutton</div>
+                    </div>
+                    <div class="expiration-date">
+                        <div class="shadow">12/2022</div>
+                        <div class="emboss">12/2022</div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="signature">Amy Dutton</div>
+                    <div class="cvv">321</div>
+                </div>
+            </div>
+            <div class="credit-card-form">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="card-number">Card Number</label>
+                        <input
+                            name="card-number"
+                            id="card-number"
+                            type="number"
+                            min="1000000000000000"
+                            max="9999999999999999"
+                        />
+                    </div>
+                    <div class="form-field">
+                        <label for="card-holder">Card Name</label>
+                        <input
+                            name="card-holder"
+                            id="card-holder"
+                            type="text"
+                        />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field field2">
+                        <label for="expiration-month">Expiration Date</label>
+                        <div class="form-field-date">
+                            <select
+                                id="expiration-month"
+                                name="expiration-month"
+                            >
+                                <option class="lazydom">Month</option>
+                            </select>
+                            <select id="expiration-year" name="expiration-year">
+                                <option class="lazydom">Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="card-cvv">CVV</label>
+                        <input
+                            name="card-cvv"
+                            id="card-cvv"
+                            type="number"
+                            min="100"
+                            max="999"
+                        />
+                    </div>
+                </div>
+                <div class="form-row"><a href="#">Update</a></div>
+            </div>
+        </div>
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
