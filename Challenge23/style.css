@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --title-font: 'Bebas Neue', cursive;
+    --main-font: 'Roboto Mono', monospace;
+    --background: #8d58ff;
+    --close-colour: #3200a0;
+    --yellow: #faff00;
+    --input-box: #b686ff;
+}
+
+#toaster {
+    background: var(--background);
+    bottom: 0;
+    font-family: var(--main-font);
+    left: 0;
+    position: sticky;
+    width: 520px;
+}
+
+#toaster .close-btn a {
+    align-items: center;
+    color: var(--close-colour);
+    display: flex;
+    font-weight: bold;
+    gap: 12px;
+    position: absolute;
+    text-transform: uppercase;
+    top: -40px;
+}
+
+#toaster .close-btn a img {
+    height: 24px;
+}
+
+#toaster .content {
+    color: white;
+    padding: 46px 56px;
+}
+
+#toaster .content .title {
+    font-family: var(--title-font);
+    font-size: 5.875rem;
+    line-height: 0.77em;
+    margin-bottom: 16px;
+}
+
+#toaster .content .title:before {
+    content: "";
+    float: right;
+    height: 100px;
+    width: 100px;
+}
+
+#toaster .content .maintext {
+    font-weight: bold;
+    line-height: 1.875em;
+    margin-bottom: 45px;
+}
+
+#toaster .email.input {
+    align-items: center;
+    display: grid;
+    grid-template-areas: 'label .' 'input arrow';
+}
+
+#toaster .email.input label {
+    color: var(--yellow);
+    font-weight: bold;
+    grid-area: label;
+    text-transform: uppercase;
+}
+
+#toaster .email.input input[type="text"] {
+    background: var(--input-box);
+    border: 0;
+    border-radius: 4px;
+    grid-area: input;
+    height: 55px;
+    opacity: 0.6;
+}
+
+#toaster .email.input a {
+    grid-area: arrow;
+    padding-left: 17px;
+}
+
+#toaster .email.input a img {
+    height: 30px;
+}
+
+#toaster .cover {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 255px;
+}
