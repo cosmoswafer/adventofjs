@@ -11,6 +11,8 @@
     --card-height: 413px;
     --card-width: 668px;
     --card-top-margin: 100px;
+    --card-image-front: url('images/cc__discover--front.png');
+    --card-image-back: url('images/cc__discover--back.png');
 }
 
 body {
@@ -33,14 +35,34 @@ body {
     width: 100%;
 }
 
+#app > .credit-card-cover.american  {
+    --card-image-front: url('images/cc__american--front.png');
+    --card-image-back: url('images/cc__american--back.png');
+}
+
+#app > .credit-card-cover.discover  {
+    --card-image-front: url('images/cc__discover--front.png');
+    --card-image-back: url('images/cc__discover--back.png');
+}
+
+#app > .credit-card-cover.mastercard  {
+    --card-image-front: url('images/cc__mastercard--front.png');
+    --card-image-back: url('images/cc__mastercard--back.png');
+}
+
+#app > .credit-card-cover.visa  {
+    --card-image-front: url('images/cc__visa--front.png');
+    --card-image-back: url('images/cc__visa--back.png');
+}
+
 #app > .credit-card-cover .front {
-    background: url('images/cc__discover--front.png');
+    background: var(--card-image-front);
     opacity: 1;
     z-index: 2;
 }
 
 #app > .credit-card-cover .back {
-    background: url('images/cc__discover--back.png');
+    background: var(--card-image-back);
     opacity: 0;
     transform: rotateY(180deg);
     z-index: 1;

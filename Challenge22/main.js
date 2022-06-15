@@ -73,7 +73,21 @@ class App {
     }
 
     changeCard(cardNmberStr) {
+        this.changeCardCover(cardNmberStr);
         this.setCardNumber(cardNmberStr);
+    }
+
+    changeCardCover(numberStr) {
+        const cardType = numberStr.slice(0,1);
+        this.cardCover.classList.value = 'credit-card-cover';
+        if (cardType === '3') 
+            this.cardCover.classList.add('american');
+        else if (cardType === '4')
+            this.cardCover.classList.add('visa');
+        else if (cardType === '5')
+            this.cardCover.classList.add('mastercard');
+        else if (cardType === '6')
+            this.cardCover.classList.add('discover');
     }
 
     setCardNumber(numberStr) {
@@ -88,8 +102,6 @@ class App {
                 ['.front .card-number .emboss', newCardNumber],
                 ['.front .card-number .shadow', newCardNumber]
             );
-        } else {
-            console.log('Fuck 8!');
         }
     }
 
