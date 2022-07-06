@@ -113,7 +113,6 @@ class DataSet {
 
     update = (eid, values) => {
         this.data = data.map((d) => d.id === Number(eid) ? {...d, ...values} : d);
-        console.dir(this.data);
     }
 }
 
