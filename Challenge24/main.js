@@ -9,6 +9,7 @@ class Table {
         this.renderTableFn = this.table.renderTable;
 
         this.dataSet = new DataSet(this);
+        this.updateDataFn = this.dataSet.update;
         this.editor = new Editor(this);
         this.renderEditorFn = this.editor.renderEditor;
     }
@@ -16,6 +17,10 @@ class Table {
     render() {
         this.renderTableFn(this.dataSet.data);
         this.renderEditorFn();
+    }
+
+    updateData(eid, values) {
+        this.updateDataFn(eid, values);
     }
 }
 
@@ -105,6 +110,11 @@ class DataSet {
             : this.#sortColDesc(key);
         this.controller.render();
     }
+
+    update = (eid, values) => {
+        this.data = data.map((d) => d.id === Number(eid) ? {...d, ...values} : d);
+        console.dir(this.data);
+    }
 }
 
 class TableBase {
@@ -192,6 +202,8 @@ class TableBase {
 }
 
 class Editor {
+    dataMapping = {'c-name': 'name', 'c-email': 'email', 'c-jobtitle': 'title'};
+
     constructor(controller) {
         this.controller = controller;
         this.htmlTable = controller.htmlTable;
@@ -210,10 +222,11 @@ class Editor {
     #submitValues(row) {
         const eid = row.querySelector('td:first-child').textContent;
         const inputs = row.querySelectorAll('td > input');
-        console.log('Trying to submit entry id: ', eid);
+        const values = {};
         inputs.forEach((i) =>
-            console.log(i.getAttribute('name'), ':', i.value)
+            values[this.dataMapping[i.getAttribute('name')]] = i.value
         );
+        this.controller.updateData(eid, values);
     }
 
     renderEditor = () => {
@@ -231,16 +244,6 @@ class App {
 
     constructor() {
         this.table.render();
-
-        /*
-        //Editing buttons
-        const tableRows = document.querySelectorAll('#app table > tbody tr');
-        tableRows.forEach((r) =>
-            r
-                .querySelector('td:last-child svg')
-                .addEventListener('click', () => r.classList.toggle('editing'))
-        );
-        */
     }
 }
 
