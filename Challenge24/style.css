@@ -1,8 +1,114 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-colour: #363daa;
+    --sort-colour: #363daa;
+    --sort-background: #dde8f7;
+    --border-colour: #dde8f7;
+    --header-colour: #3c3744;
+    --input-background: #edf4f9;
+    --main-font: 'Roboto', sans-serif;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    font-family: var(--main-font);
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0;
+}
+
+body > svg {
+    position: absolute;
+    z-index: -1;
+}
+
+#app > table > thead tr th {
+    border-bottom: 2px solid var(--header-colour);
+    color: var(--primary-colour);
+    padding: 12px;
+}
+
+#app > table > thead tr th div {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#app > table > thead tr th svg {
+    cursor: pointer;
+    fill: var(--sort-background);
+}
+
+#app > table > thead tr th svg.asc .asc,
+#app > table > thead tr th svg.desc .desc {
+    fill: var(--sort-colour);
+}
+
+#app > table > tbody tr td {
+    border-bottom: 2px solid var(--border-colour);
+    padding: 4px;
+}
+
+#app > table > tbody tr td input {
+    background: none;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    font-size: 1rem;
+    padding: 12px;
+    width: 12em;
+}
+
+#app > table > tbody tr td:nth-child(2) input {
+    color: var(--primary-colour);
+    font-weight: bold;
+}
+
+#app > table > tbody tr.editing td input {
+    background: var(--input-background);
+}
+
+#app > table > tbody tr td:last-child svg {
+    cursor: pointer;
+}
+
+#app > table > tbody tr.editing td svg .edit-icon,
+#app > table > tbody tr:not(.editing) td svg .update-icon {
+    display: none;
+}
+
+#app > table > tbody tr:last-child td {
+    border-bottom: 2px solid var(--header-colour);
+}
+
+#app > table > tfoot tr td {
+    padding-top: 4px;
+}
+
+#app > table > tfoot tr td:last-child div {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    justify-content: end;
+}
+
+#app > table > tfoot tr td:last-child {
+    text-align: right;
+}
+
+#app > table > tfoot tr td:last-child img.pre-page,
+#app > table > tfoot tr td:last-child img.next-page {
+    cursor: pointer;
+}
+
+#app > table > tfoot tr td input[name='page-number'] {
+    background: var(--input-background);
+    border: none;
+    height: 3em;
+    text-align: center;
+    width: 3em;
 }
