@@ -1303,7 +1303,7 @@
             "weather": [
                 {
                     "id": 501,
-                    "main": "Rain",
+                    "main": "Clouds",
                     "description": "moderate rain",
                     "icon": "10d"
                 }
@@ -1343,7 +1343,7 @@
             "weather": [
                 {
                     "id": 501,
-                    "main": "Rain",
+                    "main": "Snow",
                     "description": "moderate rain",
                     "icon": "10d"
                 }
@@ -1383,7 +1383,7 @@
             "weather": [
                 {
                     "id": 501,
-                    "main": "Rain",
+                    "main": "Thunderstorm",
                     "description": "moderate rain",
                     "icon": "10d"
                 }
@@ -1463,7 +1463,7 @@
             "weather": [
                 {
                     "id": 500,
-                    "main": "Rain",
+                    "main": "Drizzle",
                     "description": "light rain",
                     "icon": "10d"
                 }
@@ -1503,7 +1503,7 @@
             "weather": [
                 {
                     "id": 500,
-                    "main": "Rain",
+                    "main": "Clear",
                     "description": "light rain",
                     "icon": "10d"
                 }
