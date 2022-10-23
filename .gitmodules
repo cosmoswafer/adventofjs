@@ -1,16 +1,16 @@
 [submodule "Challenge14/lib/lazydom"]
     branch = release
 	path = Challenge14/lib/lazydom
-    url = https://github.com/jimmy09140456/lazydom.git
+    url = https://github.com/cosmoswafer/lazydom.git
 [submodule "Challenge15/lib/lazydom"]
     branch = release
 	path = Challenge15/lib/lazydom
-    url = https://github.com/jimmy09140456/lazydom.git
+    url = https://github.com/cosmoswafer/lazydom.git
 [submodule "Challenge19/lib/lazydom"]
 	path = Challenge19/lib/lazydom
-	url = https://github.com/jimmy09140456/lazydom.git
+	url = https://github.com/cosmoswafer/lazydom.git
 	branch = release
 [submodule "Challenge24/lib/lazydom"]
 	path = Challenge24/lib/lazydom
-	url = https://github.com/jimmy09140456/lazydom.git
+	url = https://github.com/cosmoswafer/lazydom.git
 	branch = release
