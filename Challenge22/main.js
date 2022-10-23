@@ -1,4 +1,4 @@
-import { DOM } from 'https://jimmy09140456.github.io/lazydom/dom.js';
+import { DOM } from './lib/lazydom/dom.js';
 
 class App {
     cardCover = new DOM('#app .credit-card-cover');
