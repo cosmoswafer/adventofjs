@@ -1,4 +1,4 @@
-import { DOM } from 'https://jimmy09140456.github.io/lazydom/dom.js';
+import { DOM } from './lib/lazydom/dom.js';
 
 class Util {
     static usdFormatter = new Intl.NumberFormat('en-US', {

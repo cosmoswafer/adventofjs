@@ -18,3 +18,11 @@
 	path = Challenge22/lib/lazydom
 	url = https://github.com/cosmoswafer/lazydom.git
 	branch = release
+[submodule "Challenge20/lib/lazydom"]
+	path = Challenge20/lib/lazydom
+	url = https://github.com/cosmoswafer/lazydom.git
+	branch = release
+[submodule "Challenge21/lib/lazydom"]
+	path = Challenge21/lib/lazydom
+	url = https://github.com/cosmoswafer/lazydom.git
+	branch = release
